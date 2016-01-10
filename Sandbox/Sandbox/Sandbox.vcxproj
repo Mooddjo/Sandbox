@@ -158,6 +158,7 @@
     <ClInclude Include="graphics\IRenderer.h" />
     <ClInclude Include="graphics\Material.h" />
     <ClInclude Include="graphics\MaterialProperty.h" />
+    <ClInclude Include="graphics\OGLMaterialProperty.h" />
     <ClInclude Include="graphics\OGLRenderer.h" />
     <ClInclude Include="graphics\RenderingService.h" />
     <ClInclude Include="graphics\Shader.h" />

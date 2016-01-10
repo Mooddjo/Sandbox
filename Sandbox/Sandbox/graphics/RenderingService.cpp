@@ -20,7 +20,7 @@ RenderingService::~RenderingService()
 void
 RenderingService::renderFeatureCreated(IEventData* data)
 {
-	EFeatureCreated<FRenderable>* renderCreatedEvent = static_cast<EFeatureCreated<FRenderable>*>(data);
+	EvFeatureCreated<FRenderable>* renderCreatedEvent = static_cast<EvFeatureCreated<FRenderable>*>(data);
 	FRenderable* renderableFeature = renderCreatedEvent->getFeature();
 	if (renderableFeature)
 	{

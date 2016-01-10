@@ -99,6 +99,9 @@
     <ClInclude Include="scene\features\FUpdatable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="graphics\OGLMaterialProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\Application.cpp">
