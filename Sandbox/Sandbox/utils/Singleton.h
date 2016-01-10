@@ -2,7 +2,7 @@
 
 #include <mutex>
 
-namespace smartray
+namespace sandbox
 {
 	template<typename T> class Singleton
 	{
@@ -18,7 +18,7 @@ namespace smartray
 	template<typename T> std::mutex Singleton<T>::s_mutex;
 
 	template<typename T>
-	T* smartray::Singleton<T>::getInstance()
+	T* sandbox::Singleton<T>::getInstance()
 	{
 		if (!s_instance)
 		{

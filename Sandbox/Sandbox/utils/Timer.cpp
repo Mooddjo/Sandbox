@@ -2,7 +2,7 @@
 
 #include <ctime>
 
-using namespace smartray;
+using namespace sandbox;
 
 void
 Timer::start()

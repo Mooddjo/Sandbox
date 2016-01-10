@@ -4,10 +4,10 @@
 
 namespace sandbox
 {
-	class DLL_SPEC String
+	class DLL_SPEC SString
 	{
 	public:
-		String(const char* str);
+		SString(const char* str);
 		const char* getCString();
 	private:
 

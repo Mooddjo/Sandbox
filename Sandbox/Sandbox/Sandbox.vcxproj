@@ -77,12 +77,17 @@
     <LibraryPath>$(SolutionDir)\..\ThirdParty\glew\lib\x64;$(SolutionDir)\..\ThirdParty\glfw\lib\;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)\..\ThirdParty\glfw\include\;$(SolutionDir)\..\ThirdParty\glew\include;$(SolutionDir)\..\ThirdParty\glm;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\..\ThirdParty\glfw\include\;$(SolutionDir)\..\ThirdParty\glew\include;$(SolutionDir)\..\ThirdParty\glm;$(ProjectDir)utils;$(ProjectDir)math;$(ProjectDir)graphics;$(ProjectDir)scene;$(ProjectDir)scene\entities;$(ProjectDir)scene\features\renderables;$(ProjectDir)scene\features;$(ProjectDir)core;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\ThirdParty\glew\lib\x64;$(SolutionDir)\..\ThirdParty\glfw\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Temp\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\..\ThirdParty\glfw\include\;$(SolutionDir)\..\ThirdParty\glew\include;$(SolutionDir)\..\ThirdParty\glm;$(ProjectDir);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\..\ThirdParty\glfw\include\;$(SolutionDir)\..\ThirdParty\glew\include;$(SolutionDir)\..\ThirdParty\glm;$(ProjectDir)utils;$(ProjectDir)math;$(ProjectDir)graphics;$(ProjectDir)scene;$(ProjectDir)scene\entities;$(ProjectDir)scene\features\renderables;$(ProjectDir)scene\features;$(ProjectDir)core;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\ThirdParty\glew\lib\x64;$(SolutionDir)\..\ThirdParty\glfw\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\lib\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Temp\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -100,11 +105,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SANDBOX_DLL;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SANDBOX_DLL;_SCL_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>for /r  "$(ProjectDir)" %%I in (*.h) do xcopy %%I "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\include\" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -127,20 +135,42 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SANDBOX_DLL;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SANDBOX_DLL;_SCL_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>for /r  "$(ProjectDir)" %%I in (*.h) do xcopy %%I "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\include\" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="core\Application.h" />
+    <ClInclude Include="core\EventService.h" />
     <ClInclude Include="core\Platform.h" />
-    <ClInclude Include="core\String.h" />
+    <ClInclude Include="core\Sandbox.h" />
+    <ClInclude Include="core\SString.h" />
     <ClInclude Include="core\Window.h" />
-    <ClInclude Include="math\Math.h" />
+    <ClInclude Include="graphics\GPUBuffer.h" />
+    <ClInclude Include="graphics\GPUVertexArray.h" />
+    <ClInclude Include="graphics\IRenderer.h" />
+    <ClInclude Include="graphics\Material.h" />
+    <ClInclude Include="graphics\MaterialProperty.h" />
+    <ClInclude Include="graphics\OGLRenderer.h" />
+    <ClInclude Include="graphics\RenderingService.h" />
+    <ClInclude Include="graphics\Shader.h" />
+    <ClInclude Include="math\MathUtils.h" />
+    <ClInclude Include="scene\entities\EEntity.h" />
+    <ClInclude Include="scene\features\FFeature.h" />
+    <ClInclude Include="scene\features\FUpdatable.h" />
+    <ClInclude Include="scene\features\renderables\FRenderable.h" />
+    <ClInclude Include="scene\features\renderables\FRenderable2d.h" />
+    <ClInclude Include="scene\features\renderables\FRenderableCube.h" />
+    <ClInclude Include="scene\Scene.h" />
+    <ClInclude Include="scene\SceneService.h" />
+    <ClInclude Include="scene\Transform.h" />
     <ClInclude Include="utils\Singleton.h" />
     <ClInclude Include="utils\SmartLogger.h" />
     <ClInclude Include="utils\StringUtils.h" />
@@ -148,8 +178,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\Application.cpp" />
-    <ClCompile Include="core\String.cpp" />
+    <ClCompile Include="core\EventService.cpp" />
+    <ClCompile Include="core\SString.cpp" />
     <ClCompile Include="core\Window.cpp" />
+    <ClCompile Include="graphics\GPUBuffer.cpp" />
+    <ClCompile Include="graphics\GPUVertexArray.cpp" />
+    <ClCompile Include="graphics\Material.cpp" />
+    <ClCompile Include="graphics\OGLRenderer.cpp" />
+    <ClCompile Include="graphics\RenderingService.cpp" />
+    <ClCompile Include="graphics\Shader.cpp" />
+    <ClCompile Include="scene\entities\EEntity.cpp" />
+    <ClCompile Include="scene\features\FFeature.cpp" />
+    <ClCompile Include="scene\features\FUpdatable.cpp" />
+    <ClCompile Include="scene\features\renderables\FRenderable.cpp" />
+    <ClCompile Include="scene\features\renderables\FRenderable2d.cpp" />
+    <ClCompile Include="scene\features\renderables\FRenderableCube.cpp" />
+    <ClCompile Include="scene\Scene.cpp" />
+    <ClCompile Include="scene\SceneService.cpp" />
+    <ClCompile Include="scene\Transform.cpp" />
     <ClCompile Include="utils\SmartLogger.cpp" />
     <ClCompile Include="utils\StringUtils.cpp" />
     <ClCompile Include="utils\Timer.cpp" />

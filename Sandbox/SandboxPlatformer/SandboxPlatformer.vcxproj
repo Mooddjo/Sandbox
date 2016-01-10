@@ -68,7 +68,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Temp\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
+    <IncludePath>$(SolutionDir)\..\ThirdParty\glew\include\;$(SolutionDir)\..\ThirdParty\glm\;$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\ThirdParty\glew\lib\x64\;$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Temp\$(ProjectName)\</IntDir>
+    <IncludePath>$(SolutionDir)\..\ThirdParty\glfw\include\;$(SolutionDir)\..\ThirdParty\glew\include\;$(SolutionDir)\..\ThirdParty\glm\;$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\ThirdParty\glew\lib\x64\;$(SolutionDir)\..\ThirdParty\glfw\lib\;$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\lib\;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -82,6 +94,15 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>Sandboxd.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>xcopy $(SolutionDir)..\ThirdParty\glew\lib\x64\glew32.dll $(OutputPath) /y
+xcopy $(SolutionDir)..\ThirdParty\glfw\lib\glfw3.dll $(OutputPath) /y
+xcopy $(SolutionDir)$(Platform)\$(Configuration)\Sandbox\lib\Sandboxd.dll $(OutputPath) /y
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -107,7 +128,14 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Sandbox.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>xcopy $(SolutionDir)..\ThirdParty\glew\lib\x64\glew32.dll $(OutputPath) /y
+xcopy $(SolutionDir)..\ThirdParty\glfw\lib\glfw3.dll $(OutputPath) /y
+xcopy $(SolutionDir)$(Platform)\$(Configuration)\Sandbox\lib\Sandbox.dll $(OutputPath) /y
+xcopy "$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\resources" "$(ProjectDir)resources\*" /sy</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

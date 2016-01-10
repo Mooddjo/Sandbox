@@ -5,9 +5,9 @@
 #include <memory>
 #include <string>
 
-#define SMARTLOG(message, level) smartray::SmartLogger::getInstance()->write(message, level)
+#define SMARTLOG(message, level) sandbox::SmartLogger::getInstance()->write(message, level)
 
-namespace smartray
+namespace sandbox
 {
 	enum
 	{

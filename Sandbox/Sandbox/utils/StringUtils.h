@@ -3,7 +3,7 @@
 
 #define TO_STRING(word) #word
 
-namespace smartray 
+namespace sandbox 
 {
 	class StringUtils
 	{
