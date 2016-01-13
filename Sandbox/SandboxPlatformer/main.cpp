@@ -11,7 +11,10 @@ class MyApplication : public sandbox::Application
 public:
 	void engineReady()
 	{
-
+		EQuad* quad = new EQuad(4.0);
+		Scene* s = new Scene();
+		s->addObject(quad);
+		SceneService::getInstance()->loadScene(s);
 	}
 };
 

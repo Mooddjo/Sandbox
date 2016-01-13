@@ -7,12 +7,12 @@
 
 namespace sandbox
 {
-	class DLL_SPEC FRenderableCube : public FRenderable
+	class DLL_SPEC FQuadRenderable : public FRenderable
 	{
-		DECLARE_FEATURE(FRenderableCube)
+		DECLARE_FEATURE(FQuadRenderable)
 
 	public:
-		FRenderableCube(EEntity* owner);
+		FQuadRenderable(EEntity* owner);
 		virtual void render() const override;
 		virtual void init() override;
 

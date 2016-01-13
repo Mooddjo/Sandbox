@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include "SString.h"
 #include <map>
 #include <iostream>
 #include <memory>
@@ -15,12 +15,13 @@ namespace sandbox
 		Material();
 		void setShader(ShaderProgram* shaderProgram);
 		void enable() { m_shader->enable(); }
+		void disable() { m_shader->disable(); }
 		void addProperty(MaterialProperty* property);
-		const std::map<std::string, MaterialProperty*>& getProperties();
+		const std::map<SString, MaterialProperty*>& getProperties();
 
 	private:
-		std::map<std::string, MaterialProperty*> m_properties;
-		std::string m_name;
+		std::map<SString, MaterialProperty*> m_properties;
+		SString m_name;
 		std::shared_ptr<ShaderProgram> m_shader;
 	};
 

@@ -3,6 +3,8 @@
 #include "GPUVertexArray.h"
 #include "GPUBuffer.h"
 #include "Shader.h"
+#include "Mesh.h"
+#include "Vertex.h"
 
 namespace sandbox
 {
@@ -16,11 +18,12 @@ namespace sandbox
 		virtual void init() override;
 
 	private:
-		//std::shared_ptr<GPUBuffer> m_buffer;
-		//std::shared_ptr<GPUVertexArray> m_vao;
+		std::shared_ptr<GPUBuffer> m_buffer;
+		std::shared_ptr<GPUVertexArray> m_vao;
+		Mesh m_mesh2d;
 
-		GPUBuffer* m_vbo;
-		GPUVertexArray* m_vao;
-		ShaderProgram* m_shader;
+		//GPUBuffer* m_vbo;
+		//GPUVertexArray* m_vao;
+		//ShaderProgram* m_shader;
 	};
 }

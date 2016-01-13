@@ -1,4 +1,4 @@
-#include "FRenderableCube.h"
+#include "FQuadRenderable.h"
 #include "SmartLogger.h"
 #include <iostream>
 #include "RenderingService.h"
@@ -12,7 +12,7 @@ float vertex[] =
 	-0.5, -0.5, 0.0
 };
 
-FRenderableCube::FRenderableCube(EEntity* owner) :
+FQuadRenderable::FQuadRenderable(EEntity* owner) :
 	FRenderable(owner)
 {
 	Shader* vsShader = Shader::createShader("./resources/shaders/basic_shader.vs", VERTEX_SHADER);
@@ -28,7 +28,7 @@ FRenderableCube::FRenderableCube(EEntity* owner) :
 }
 
 void
-FRenderableCube::render() const
+FQuadRenderable::render() const
 {
 	m_shader->enable();
 	m_vao->bind();
@@ -36,7 +36,7 @@ FRenderableCube::render() const
 }
 
 void
-FRenderableCube::init()
+FQuadRenderable::init()
 {
 	SMARTLOG("init FRenderableCube", kInfo);
 }

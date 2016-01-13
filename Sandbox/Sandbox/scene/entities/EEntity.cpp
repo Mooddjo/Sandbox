@@ -42,12 +42,13 @@ EEntity::addFeature(FFeature* feature)
 void
 EEntity::addFeature(FUpdatable* feature)
 {
-	this->addFeature(static_cast<FFeature*>(feature));
+	//this->addFeature(static_cast<FFeature*>(feature));
+	feature->init();
 	m_updatableFeatures.push_back((feature));
 }
 
 void
-EEntity::removeFeature(std::string featureName)
+EEntity::removeFeature(SString featureName)
 {
 	throw std::logic_error("The method or operation is not implemented.");
 }

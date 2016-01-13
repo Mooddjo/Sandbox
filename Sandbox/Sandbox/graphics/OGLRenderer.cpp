@@ -2,7 +2,7 @@
 #include "GL/glew.h"
 #include "SmartLogger.h"
 #include <stdio.h>
-#include <string>
+#include "SString.h"
 
 using namespace sandbox;
 using namespace std;
@@ -22,10 +22,10 @@ OGLRenderer::init()
 		return false;
 	}
 
-	string glewVersion = "Glew version: ";
+	SString glewVersion = "Glew version: ";
 	glewVersion.append((char*)glewGetString(GLEW_VERSION));
 
-	string glVersion = string((char*)glGetString(GL_VERSION));
+	SString glVersion = SString((char*)glGetString(GL_VERSION));
 
 	SMARTLOG(glewVersion, kInfo);
 	SMARTLOG("OpenGL version: " + glVersion, kInfo);

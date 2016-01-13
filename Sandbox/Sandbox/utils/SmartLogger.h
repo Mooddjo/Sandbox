@@ -3,7 +3,7 @@
 #include "Singleton.h"
 #include <iostream>
 #include <memory>
-#include <string>
+#include "SString.h"
 
 #define SMARTLOG(message, level) sandbox::SmartLogger::getInstance()->write(message, level)
 
@@ -21,22 +21,22 @@ namespace sandbox
 	class ILogWriter
 	{
 	public:
-		virtual void write(std::string message, LogLevel level = kInfo)const  = 0;
+		virtual void write(SString message, LogLevel level = kInfo)const  = 0;
 	};
 
 	class ConsoleLogWriter : public ILogWriter
 	{
 	public:
-		virtual void write(std::string message, LogLevel level) const override;
+		virtual void write(SString message, LogLevel level) const override;
 	private:
-		std::string formatForWarning(std::string message) const;
-		std::string formatForError(std::string message) const;
-		std::string formatForInfo(std::string message) const;
+		SString formatForWarning(SString message) const;
+		SString formatForError(SString message) const;
+		SString formatForInfo(SString message) const;
 	};
 	class HtmlLogWriter : public ILogWriter
 	{
 	public:
-		virtual void write(std::string message, LogLevel level) const override;
+		virtual void write(SString message, LogLevel level) const override;
 	};
 
 
@@ -45,7 +45,7 @@ namespace sandbox
 		friend class Singleton<SmartLogger>;
 
 	public:
-		void write(std::string message, LogLevel level);
+		void write(SString message, LogLevel level);
 
 	private:
 		SmartLogger();

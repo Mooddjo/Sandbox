@@ -101,6 +101,7 @@
       <Command>xcopy $(SolutionDir)..\ThirdParty\glew\lib\x64\glew32.dll $(OutputPath) /y
 xcopy $(SolutionDir)..\ThirdParty\glfw\lib\glfw3.dll $(OutputPath) /y
 xcopy $(SolutionDir)$(Platform)\$(Configuration)\Sandbox\lib\Sandboxd.dll $(OutputPath) /y
+xcopy "$(SolutionDir)$(Platform)\$(Configuration)\Sandbox\resources" "$(ProjectDir)resources\*" /sy
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>

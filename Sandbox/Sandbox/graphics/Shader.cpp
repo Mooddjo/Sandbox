@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace sandbox;
 using namespace std;
@@ -55,6 +56,13 @@ ShaderProgram::compile()
 	if (GL_TRUE != params)
 	{
 		SMARTLOG("Shader link error", kInfo);
+		GLint maxLength = 0;
+		glGetProgramiv(m_program, GL_INFO_LOG_LENGTH, &maxLength);
+
+		char* infoLog = new char[maxLength];
+		glGetProgramInfoLog(m_program, maxLength, &maxLength, infoLog);
+		SMARTLOG(infoLog, kInfo);
+		glDeleteProgram(m_program);
 	}
 
 	
@@ -77,12 +85,12 @@ ShaderProgram::getId()
 /************************************************************************/
 
 Shader*
-Shader::createShader(std::string shaderPath, ShaderType type)
+Shader::createShader(SString shaderPath, ShaderType type)
 {
 	Shader* shader = new Shader();
 	shader->m_id = glCreateShader(type);
 	shader->m_type = type;
-	string shaderSource = StringUtils::parseFile(shaderPath);
+	SString shaderSource = StringUtils::parseFile(shaderPath);
 	char* buffer = new char[shaderSource.length() + 1];
 	shaderSource.copy(buffer, shaderSource.length());
 	shader->m_name = shaderPath;
@@ -105,7 +113,7 @@ Shader::getType() const
 	return m_type;
 }
 
-string
+SString
 Shader::getName() const
 {
 	return m_name;

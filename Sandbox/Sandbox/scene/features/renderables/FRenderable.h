@@ -3,11 +3,11 @@
 #include "FFeature.h"
 #include "Material.h"
 #include <memory>
-#include <string>
+#include "SString.h"
 
 namespace sandbox
 {
-	const std::string EVENT_RENDER_FEATURE_CREATED = "EVENT_RENDER_FEATURE_CREATED";
+	const SString EVENT_RENDER_FEATURE_CREATED = "EVENT_RENDER_FEATURE_CREATED";
 
 	class DLL_SPEC FRenderable: public FFeature
 	{

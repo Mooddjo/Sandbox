@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include "SString.h"
 
 #define TO_STRING(word) #word
 
@@ -8,7 +8,7 @@ namespace sandbox
 	class StringUtils
 	{
 	public:
-		static std::string parseFile(std::string path);
+		static SString parseFile(SString path);
 	};
 
 }

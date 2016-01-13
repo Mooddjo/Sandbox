@@ -8,15 +8,15 @@ using namespace std;
 
 
 void
-HtmlLogWriter::write(std::string message, LogLevel level) const
+HtmlLogWriter::write(SString message, LogLevel level) const
 {
 	throw std::logic_error("The method or operation is not implemented.");
 }
 
 void
-ConsoleLogWriter::write(std::string message, LogLevel level) const
+ConsoleLogWriter::write(SString message, LogLevel level) const
 {
-	string log = "";
+	SString log = "";
 	switch (level)
 	{
 	case kWarning:
@@ -31,34 +31,34 @@ ConsoleLogWriter::write(std::string message, LogLevel level) const
 	default:
 		break;
 	}
-	cout << log << endl;
+	cout << log.getCString() << endl;
 }
 
 
-string
-ConsoleLogWriter::formatForWarning(string message) const
+SString
+ConsoleLogWriter::formatForWarning(SString message) const
 {
-	string formatedMessage("WARNING: ");
+	SString formatedMessage("WARNING: ");
+	formatedMessage.append(message.getCString());
+	formatedMessage.append("\0");
+
+	return formatedMessage;
+}
+
+SString
+ConsoleLogWriter::formatForError(SString message) const
+{
+	SString formatedMessage("ERROR: ");
 	formatedMessage.append(message);
 	formatedMessage.append("\0");
 
 	return formatedMessage;
 }
 
-string
-ConsoleLogWriter::formatForError(string message) const
+SString
+ConsoleLogWriter::formatForInfo(SString message) const
 {
-	string formatedMessage("ERROR: ");
-	formatedMessage.append(message);
-	formatedMessage.append("\0");
-
-	return formatedMessage;
-}
-
-string
-ConsoleLogWriter::formatForInfo(string message) const
-{
-	string formatedMessage("INFO: ");
+	SString formatedMessage("INFO: ");
 	formatedMessage.append(message);
 	formatedMessage.append("\0");
 
@@ -72,7 +72,7 @@ SmartLogger::SmartLogger()
 }
 
 void
-SmartLogger::write(std::string message, LogLevel level)
+SmartLogger::write(SString message, LogLevel level)
 {
 	m_logWriter->write(message, level);
 }

@@ -2,7 +2,7 @@
 
 #include "Platform.h"
 #include "gl/glew.h"
-#include <string>
+#include "SString.h"
 #include <map>
 #include <iostream>
 
@@ -24,7 +24,7 @@ namespace sandbox
 		/// @return 	Shader*
 		/// @param 		filename path
 		/// @param 		shader type
-		static Shader* createShader(std::string shaderPath, ShaderType type);
+		static Shader* createShader(SString shaderPath, ShaderType type);
 		/// @brief 		Destructor of the shader, the shader is deleted if it has been created by 3D API
 		/// @return 	
 		~Shader();
@@ -36,7 +36,7 @@ namespace sandbox
 		ShaderType getType() const;
 		/// @brief 		Name can be useful to retrieve a shader
 		/// @return 	std::string
-		std::string getName() const;
+		SString getName() const;
 		/// @brief 		Shader compilation and error checking
 		void compileShader();
 	private:
@@ -45,7 +45,7 @@ namespace sandbox
 		Shader& operator= (const Shader&) = delete;
 		GLuint m_id;
 		ShaderType m_type;
-		std::string m_name;
+		SString m_name;
 	};
 
 

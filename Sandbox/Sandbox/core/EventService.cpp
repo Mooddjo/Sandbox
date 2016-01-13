@@ -3,7 +3,7 @@
 using namespace sandbox;
 
 void 
-EventService::fireEvent(std::string eventName, IEventData* data)
+EventService::fireEvent(SString eventName, IEventData* data)
 {
 	auto it = m_subscribers.find(eventName);
 	if (it != m_subscribers.end())
@@ -16,7 +16,7 @@ EventService::fireEvent(std::string eventName, IEventData* data)
 }
 
 bool
-EventService::subscribeToEvent(std::string eventName, EventCallback eventCallback)
+EventService::subscribeToEvent(SString eventName, EventCallback eventCallback)
 {
 	if (eventCallback)
 	{
@@ -38,7 +38,7 @@ EventService::subscribeToEvent(std::string eventName, EventCallback eventCallbac
 }
 
 bool
-EventService::unsubscribeToEvent(std::string eventName, void* object)
+EventService::unsubscribeToEvent(SString eventName, void* object)
 {
 	return false;
 }

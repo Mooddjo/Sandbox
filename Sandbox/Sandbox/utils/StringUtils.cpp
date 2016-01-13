@@ -2,18 +2,19 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
 
 using namespace sandbox;
 using namespace std;
 
-string
-StringUtils::parseFile(std::string path)
+SString
+StringUtils::parseFile(SString path)
 {
 
 	string line;
 	string buffer;
 
-	ifstream ifs(path);
+	ifstream ifs(path.getCString());
 	if (ifs.is_open())
 	{
 		while (getline(ifs, line))
@@ -23,5 +24,5 @@ StringUtils::parseFile(std::string path)
 		}
 	}
 	ifs.close();
-	return buffer;
+	return SString(buffer.c_str());
 }

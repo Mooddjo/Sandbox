@@ -26,7 +26,7 @@ void Material::addProperty(MaterialProperty* property)
 	}
 }
 
-const std::map<std::string, MaterialProperty*>& Material::getProperties()
+const std::map<SString, MaterialProperty*>& Material::getProperties()
 {
 	return m_properties;
 }

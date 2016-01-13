@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "SString.h"
 
 namespace sandbox
 {
@@ -23,8 +24,8 @@ namespace sandbox
 		class GenericValue
 		{
 		public:
-			GenericValue(std::string name, PropertyType type) : m_name(name), m_type(type) {};
-			std::string m_name;
+			GenericValue(SString name, PropertyType type) : m_name(name), m_type(type) {};
+			SString m_name;
 			PropertyType m_type;
 			virtual void submit() = 0;
 		};
@@ -33,7 +34,7 @@ namespace sandbox
 		class Value : public GenericValue
 		{
 		public:
-			Value(std::string name, T value, PropertyType type) :GenericValue(name, type)
+			Value(SString name, T value, PropertyType type) :GenericValue(name, type)
 			{
 				data = value;
 			}
@@ -45,7 +46,7 @@ namespace sandbox
 		};
 
 	public:
-		template<typename T> static MaterialProperty* create(std::string name, T value, PropertyType type)
+		template<typename T> static MaterialProperty* create(SString name, T value, PropertyType type)
 		{
 			MaterialProperty* matProp = new MaterialProperty();
 			matProp->m_value = new Value<T>(name, value, type);
@@ -53,7 +54,7 @@ namespace sandbox
 		}
 
 		void submit() const { m_value->submit(); }
-		std::string getName() { return m_value->m_name; }
+		SString getName() { return m_value->m_name; }
 
 	private:
 		GenericValue* m_value;

@@ -4,6 +4,7 @@
 #include "Transform.h"
 #include "FFeature.h"
 #include "FUpdatable.h"
+#include "SString.h"
 #include <string>
 #include <memory>
 
@@ -17,7 +18,7 @@ namespace sandbox
 		void update(double deltaMs);
 		void addFeature(FFeature* feature);
 		void addFeature(FUpdatable* feature);
-		void removeFeature(std::string featureName);
+		void removeFeature(SString featureName);
 		template<typename T> T* getFeature();
 		bool isEnable() const { return m_isEnable; }
 		void setEnable(bool val) { m_isEnable = val; }
@@ -25,7 +26,7 @@ namespace sandbox
 	private:
 		static unsigned int s_idCounter;
 		unsigned int m_id;
-		std::string m_name;
+		SString m_name;
 		bool m_isEnable;
 		Transform m_transform;
 		std::list<std::shared_ptr<FFeature>> m_features;

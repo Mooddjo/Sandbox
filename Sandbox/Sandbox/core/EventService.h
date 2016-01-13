@@ -2,6 +2,7 @@
 
 #include "Platform.h"
 #include "Singleton.h"
+#include "SString.h"
 #include <map>
 #include <list>
 
@@ -24,16 +25,16 @@ namespace sandbox
 	{
 		friend class Singleton<EventService>;
 	public:
-		bool subscribeToEvent(std::string eventName, EventCallback eventCallback);
-		bool unsubscribeToEvent(std::string eventName, void* object);
-		void fireEvent(std::string name, IEventData* data);
+		bool subscribeToEvent(SString eventName, EventCallback eventCallback);
+		bool unsubscribeToEvent(SString eventName, void* object);
+		void fireEvent(SString name, IEventData* data);
 
 	protected:
 		EventService() {}
 
 	private:
 
-		std::map<std::string, std::list<EventCallback>> m_subscribers;
+		std::map<SString, std::list<EventCallback>> m_subscribers;
 	};
 
 	template<typename T>
@@ -49,9 +50,9 @@ namespace sandbox
 	class DLL_SPEC EvStringMessage : public IEventData
 	{
 	public:
-		EvStringMessage(std::string message):m_message(message){}
-		std::string getMessage() { return m_message; }
+		EvStringMessage(SString message):m_message(message){}
+		SString getMessage() { return m_message; }
 	private:
-		std::string m_message;
+		SString m_message;
 	};
 }	

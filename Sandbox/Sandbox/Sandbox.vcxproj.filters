@@ -66,9 +66,6 @@
     <ClInclude Include="scene\features\renderables\FRenderable2d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scene\features\renderables\FRenderableCube.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="graphics\Material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -100,6 +97,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="graphics\OGLMaterialProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\entities\EQuad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\features\renderables\FQuadRenderable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -140,9 +149,6 @@
     <ClCompile Include="scene\features\renderables\FRenderable2d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scene\features\renderables\FRenderableCube.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="graphics\Material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -170,5 +176,21 @@
     <ClCompile Include="scene\features\FUpdatable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scene\entities\EQuad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\features\renderables\FQuadRenderable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shaders\basic_shader.fs" />
+    <None Include="resources\shaders\basic_shader.vs" />
   </ItemGroup>
 </Project>

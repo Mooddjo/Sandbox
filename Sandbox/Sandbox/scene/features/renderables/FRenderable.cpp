@@ -11,7 +11,7 @@ FRenderable::FRenderable(EEntity* owner, Material* material):
 
 	if (!material)
 	{
-		m_material = std::shared_ptr<Material>();
+		m_material = std::make_shared<Material>();
 	}
 }
 
