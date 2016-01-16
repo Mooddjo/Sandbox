@@ -1,6 +1,7 @@
 #pragma once
 #include "IRenderer.h"
 #include "GPUVertexArray.h"
+#include "GPUBuffer.h"
 
 namespace sandbox
 {
@@ -9,6 +10,7 @@ namespace sandbox
 	public:
 		static const float backgroundColor[];
 		virtual void drawVertexArray(GPUVertexArray* vao) override;
+		virtual void drawElementArray(GPUIndexBuffer* ib) override;
 		virtual bool init() override;
 		virtual void clear() override;
 	};

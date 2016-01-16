@@ -20,8 +20,7 @@ namespace sandbox
 	public:
 		void render();
 		void drawVertexArray(GPUVertexArray* vao);
-
-		
+		void drawElementArray(GPUIndexBuffer* ib);
 	private:
 		std::shared_ptr<IRenderer> m_renderer;
 		std::list<FRenderable*> m_renderableObjects;

@@ -15,7 +15,7 @@ namespace sandbox
 
 	public:
 		FRenderable(EEntity* owner, Material* material = nullptr);
-		virtual void render() const = 0;
+		virtual void render() = 0;
 		virtual void init() override = 0;
 
 	private:

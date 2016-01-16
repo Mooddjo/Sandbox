@@ -1,41 +1,34 @@
 #include "FRenderable2d.h"
 
 #include "RenderingService.h"
+#include "Vertex.h"
 
 using namespace sandbox;
 
 
 FRenderable2d::FRenderable2d(EEntity* owner) :
-	FRenderable(owner)
-{
-
-}
-
+	FRenderable(owner) {}
 
 
 void
 FRenderable2d::init()
 {
+	m_buffer = std::make_shared<GPURawBuffer>(
+		m_2dMesh.getVerticesCount(),
+		m_2dMesh.getVertexSize(),
+		m_2dMesh.getVerticesPointer());
+	
+	m_vao = std::make_shared<GPUVertexArray>(m_buffer.get(), m_2dMesh.getVerticesCount());
+	m_ib = std::make_shared<GPUIndexBuffer>(m_2dMesh.getIndexCount(), m_2dMesh.getIndicesPointer());
 
-	m_mesh2d.addVertex(vec3(-0.5, 0.5, 0.0));
-	m_mesh2d.addVertex(vec3(0.5, 0.5, 0.0));
-	m_mesh2d.addVertex(vec3(0.5, -0.5, 0.0));
-	m_mesh2d.addVertex(vec3(0.5, -0.5, 0.0));
-	m_mesh2d.addVertex(vec3(-0.5, -0.5, 0.0));
-	m_mesh2d.addVertex(vec3(-0.5, 0.5, 0.0));
-
-	unsigned int vertexCount = m_mesh2d.getVerticesCount();
-
-	m_buffer = std::make_shared<GPUBuffer>(vertexCount * 3, m_mesh2d.getVerticesPosition());
-	m_vao = std::make_shared<GPUVertexArray>(m_buffer.get(), vertexCount);
 }
 
 void
-FRenderable2d::render() const
+FRenderable2d::render()
 {
 	m_material->enable();
 	m_vao->bind();
-	RENDERING_SERVICE->drawVertexArray(m_vao.get());
+	m_ib->bind();
+	RENDERING_SERVICE->drawElementArray(m_ib.get());
 	m_material->disable();
 }
-

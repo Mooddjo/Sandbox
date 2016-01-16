@@ -13,11 +13,11 @@ namespace sandbox
 
 	public:
 		FQuadRenderable(EEntity* owner);
-		virtual void render() const override;
+		virtual void render() override;
 		virtual void init() override;
 
 	private:
-		GPUBuffer* m_vbo;
+		GPURawBuffer* m_vbo;
 		GPUVertexArray* m_vao;	
 		ShaderProgram* m_shader;
 	};

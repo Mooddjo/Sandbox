@@ -3,7 +3,7 @@
 #include "GPUVertexArray.h"
 #include "GPUBuffer.h"
 #include "Shader.h"
-#include "Mesh.h"
+#include "Quad.h"
 #include "Vertex.h"
 
 namespace sandbox
@@ -14,16 +14,13 @@ namespace sandbox
 
 	public:
 		FRenderable2d(EEntity* owner);
-		virtual void render() const override;
+		virtual void render() override;
 		virtual void init() override;
 
 	private:
-		std::shared_ptr<GPUBuffer> m_buffer;
+		std::shared_ptr<GPURawBuffer> m_buffer;
 		std::shared_ptr<GPUVertexArray> m_vao;
-		Mesh m_mesh2d;
-
-		//GPUBuffer* m_vbo;
-		//GPUVertexArray* m_vao;
-		//ShaderProgram* m_shader;
+		std::shared_ptr<GPUIndexBuffer> m_ib;
+		Quad m_2dMesh;
 	};
 }

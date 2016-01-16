@@ -7,7 +7,7 @@ namespace sandbox
 	class GPUVertexArray
 	{
 	public:
-		GPUVertexArray(GPUBuffer* vbo, unsigned int vertexCount);
+		GPUVertexArray(GPURawBuffer* vbo, unsigned int vertexCount);
 		void bind() const;
 		void unbind() const;
 		unsigned int getVertexCount() { return m_vertexCount; }

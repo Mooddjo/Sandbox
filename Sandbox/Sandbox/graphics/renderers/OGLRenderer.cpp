@@ -46,3 +46,9 @@ OGLRenderer::drawVertexArray(GPUVertexArray* vao)
 {
 	glDrawArrays(GL_TRIANGLES, 0, vao->getVertexCount());
 }
+
+void sandbox::OGLRenderer::drawElementArray(GPUIndexBuffer* ib)
+{
+	glDrawElements(GL_TRIANGLES, ib->getSize(), GL_UNSIGNED_SHORT, 0);
+}
+

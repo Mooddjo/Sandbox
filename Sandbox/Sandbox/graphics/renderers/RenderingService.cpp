@@ -50,3 +50,9 @@ RenderingService::drawVertexArray(GPUVertexArray* vao)
 {
 	m_renderer->drawVertexArray(vao);
 }
+
+void
+RenderingService::drawElementArray(GPUIndexBuffer* ib)
+{
+	m_renderer->drawElementArray(ib);
+}
