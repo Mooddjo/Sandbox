@@ -12,14 +12,15 @@ namespace sandbox
 		friend class Singleton<GraphicsService>;
 
 	public:
-		GpuRawBuffer* provideGpuRawBuffer();
-		GpuIndexBuffer* provideGpuIndexBuffer();
-		GpuVertexBuffer* provideGpuVertexArray();
-
+		GraphicsService();
+		GpuRawBuffer* provideGpuRawBuffer(unsigned int size, unsigned int elementSize, const void* data);
+		GpuIndexBuffer* provideGpuIndexBuffer(unsigned int size, const void* data);
+		GpuVertexBuffer* provideGpuVertexArray(const GpuRawBuffer* rawBuffer, unsigned int vertexCount);
+		void render();
 		IRenderer2d* getRenderer2d();
 		IRenderer3d* getRenderer3d();
 
 	private:
-
+		IRenderer2d* m_renderer2d;
 	};
 }

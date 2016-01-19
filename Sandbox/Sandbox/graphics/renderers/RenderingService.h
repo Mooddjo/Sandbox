@@ -3,7 +3,7 @@
 #include "FRenderable.h"
 #include "Singleton.h"
 #include "Platform.h"
-#include "IRenderer.h"
+#include "AbstractRenderer.h"
 #include <memory>
 #include <list>
 
@@ -19,10 +19,8 @@ namespace sandbox
 
 	public:
 		void render();
-		//void drawVertexArray(OlgGpuVertexBuffer* vao);
-		//void drawElementArray(OglGpuIndexBuffer* ib);
 	private:
-		std::shared_ptr<IRenderer> m_renderer;
+		std::shared_ptr<AbstractRenderer> m_renderer;
 		std::list<FRenderable*> m_renderableObjects;
 
 	protected:

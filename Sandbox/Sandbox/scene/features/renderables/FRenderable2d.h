@@ -18,8 +18,5 @@ namespace sandbox
 		virtual void init() override;
 
 	private:
-// 		std::shared_ptr<OglGpuRawBuffer> m_buffer;
-// 		std::shared_ptr<OlgGpuVertexBuffer> m_vao;
-// 		std::shared_ptr<OglGpuIndexBuffer> m_ib;
 	};
 }

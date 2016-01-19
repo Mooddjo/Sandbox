@@ -1,10 +1,10 @@
 #pragma once
-#include "IRenderer.h"
+#include "AbstractRenderer.h"
 #include "GPUBuffers.h"
 
 namespace sandbox
 {
-	class OGLRenderer : public IRenderer
+	class OGLRenderer : public AbstractRenderer
 	{
 	public:
 		static const float backgroundColor[];

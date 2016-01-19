@@ -43,11 +43,11 @@ namespace sandbox
 	class GpuVertexBuffer : public GpuBuffer
 	{
 	public: 
-		GpuVertexBuffer(GpuRawBuffer* rawBuffer, unsigned int vertexCount): 
+		GpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount): 
 			m_gpuRawBuffer(rawBuffer),
 			m_vertexCount(vertexCount){};
 	protected:
-		GpuRawBuffer* m_gpuRawBuffer;
+		const GpuRawBuffer* m_gpuRawBuffer;
 		unsigned int m_vertexCount;
 	};
 }

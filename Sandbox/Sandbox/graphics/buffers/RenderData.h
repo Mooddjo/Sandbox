@@ -9,9 +9,11 @@ namespace sandbox
 	{
 	public:
 		RenderData(const FRenderable* renderable);
+
 	private:
 		GpuRawBuffer* m_dataBuffer;
 		GpuVertexBuffer* m_vertexBuffer;
 		GpuIndexBuffer* m_indexBuffer;
+		const Material* m_material;
 	};
 }

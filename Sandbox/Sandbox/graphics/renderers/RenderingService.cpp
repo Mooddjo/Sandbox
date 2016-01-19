@@ -44,15 +44,3 @@ RenderingService::render()
 		renderable->render();
 	}
 }
-
-// void
-// RenderingService::drawVertexArray(OlgGpuVertexBuffer* vao)
-// {
-// 	m_renderer->drawVertexArray(vao);
-// }
-// 
-// void
-// RenderingService::drawElementArray(OglGpuIndexBuffer* ib)
-// {
-// 	m_renderer->drawElementArray(ib);
-// }

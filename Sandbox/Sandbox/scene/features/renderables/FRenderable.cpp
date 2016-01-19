@@ -20,3 +20,8 @@ const Mesh* sandbox::FRenderable::getMesh() const
 	return m_mesh.get();
 }
 
+const Material* sandbox::FRenderable::getMaterial() const
+{
+	return m_material.get();
+}
+
