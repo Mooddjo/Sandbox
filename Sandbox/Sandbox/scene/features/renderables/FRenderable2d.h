@@ -1,7 +1,7 @@
 #pragma once
 #include "FRenderable.h"
-#include "GPUVertexArray.h"
-#include "GPUBuffer.h"
+#include "OlgGpuVertexBuffer.h"
+#include "GPUBuffers.h"
 #include "Shader.h"
 #include "Quad.h"
 #include "Vertex.h"
@@ -18,9 +18,8 @@ namespace sandbox
 		virtual void init() override;
 
 	private:
-		std::shared_ptr<GPURawBuffer> m_buffer;
-		std::shared_ptr<GPUVertexArray> m_vao;
-		std::shared_ptr<GPUIndexBuffer> m_ib;
-		Quad m_2dMesh;
+// 		std::shared_ptr<OglGpuRawBuffer> m_buffer;
+// 		std::shared_ptr<OlgGpuVertexBuffer> m_vao;
+// 		std::shared_ptr<OglGpuIndexBuffer> m_ib;
 	};
 }

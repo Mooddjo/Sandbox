@@ -1,7 +1,6 @@
 #pragma once
 #include "IRenderer.h"
-#include "GPUVertexArray.h"
-#include "GPUBuffer.h"
+#include "GPUBuffers.h"
 
 namespace sandbox
 {
@@ -9,9 +8,16 @@ namespace sandbox
 	{
 	public:
 		static const float backgroundColor[];
-		virtual void drawVertexArray(GPUVertexArray* vao) override;
-		virtual void drawElementArray(GPUIndexBuffer* ib) override;
+		//virtual void drawVertexArray(OlgGpuVertexBuffer* vao) override;
+		//virtual void drawElementArray(OglGpuIndexBuffer* ib) override;
 		virtual bool init() override;
-		virtual void clear() override;
+		virtual void clearFrame() override;
+		virtual void buildRenderable(const FRenderable* renderable) override;
+		virtual void beginRendering() override;
+		virtual void preRender(const FRenderable* renderable) override;
+		virtual void render(const FRenderable* renderable) override;
+		virtual void postRender(const FRenderable* renderable) override;
+		virtual void endRendering() override;
+
 	};
 }

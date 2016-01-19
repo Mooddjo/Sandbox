@@ -38,21 +38,21 @@ RenderingService::sortRenderingQueue()
 void
 RenderingService::render()
 {
-	m_renderer->clear();
+	m_renderer->clearFrame();
 	for (auto renderable : m_renderableObjects)
 	{
 		renderable->render();
 	}
 }
 
-void
-RenderingService::drawVertexArray(GPUVertexArray* vao)
-{
-	m_renderer->drawVertexArray(vao);
-}
-
-void
-RenderingService::drawElementArray(GPUIndexBuffer* ib)
-{
-	m_renderer->drawElementArray(ib);
-}
+// void
+// RenderingService::drawVertexArray(OlgGpuVertexBuffer* vao)
+// {
+// 	m_renderer->drawVertexArray(vao);
+// }
+// 
+// void
+// RenderingService::drawElementArray(OglGpuIndexBuffer* ib)
+// {
+// 	m_renderer->drawElementArray(ib);
+// }

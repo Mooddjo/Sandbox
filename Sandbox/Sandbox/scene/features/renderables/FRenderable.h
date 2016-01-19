@@ -4,6 +4,7 @@
 #include "Material.h"
 #include <memory>
 #include "SString.h"
+#include "Mesh.h"
 
 namespace sandbox
 {
@@ -15,6 +16,7 @@ namespace sandbox
 
 	public:
 		FRenderable(EEntity* owner, Material* material = nullptr);
+		const Mesh* getMesh() const;
 		virtual void render() = 0;
 		virtual void init() override = 0;
 
@@ -22,5 +24,6 @@ namespace sandbox
 
 	protected:
 		std::shared_ptr<Material> m_material;
+		std::shared_ptr<Mesh> m_mesh;
 	};
 }

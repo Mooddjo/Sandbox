@@ -1,7 +1,7 @@
 #pragma once
 #include "FRenderable.h"
-#include "GPUVertexArray.h"
-#include "GPUBuffer.h"
+#include "OlgGpuVertexBuffer.h"
+#include "GPUBuffers.h"
 #include "Shader.h"
 #include "EEntity.h"
 
@@ -17,8 +17,8 @@ namespace sandbox
 		virtual void init() override;
 
 	private:
-		GPURawBuffer* m_vbo;
-		GPUVertexArray* m_vao;	
+		//OglGpuRawBuffer* m_vbo;
+		//OlgGpuVertexBuffer* m_vao;	
 		ShaderProgram* m_shader;
 	};
 }

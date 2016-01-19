@@ -12,7 +12,6 @@ const float OGLRenderer::backgroundColor[] = {0.1f, 0.1f, 0.1f, 1.0f };
 bool
 OGLRenderer::init()
 {
-	
 	SMARTLOG("-----SmartRay Initialization-----", kInfo);
 	glewExperimental = GL_TRUE;
 	GLenum err = glewInit();
@@ -36,19 +35,49 @@ OGLRenderer::init()
 }
 
 void
-OGLRenderer::clear()
+OGLRenderer::clearFrame()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void
-OGLRenderer::drawVertexArray(GPUVertexArray* vao)
+void sandbox::OGLRenderer::buildRenderable(const FRenderable* renderable)
 {
-	glDrawArrays(GL_TRIANGLES, 0, vao->getVertexCount());
+	throw std::logic_error("The method or operation is not implemented.");
 }
 
-void sandbox::OGLRenderer::drawElementArray(GPUIndexBuffer* ib)
+void sandbox::OGLRenderer::beginRendering()
 {
-	glDrawElements(GL_TRIANGLES, ib->getSize(), GL_UNSIGNED_SHORT, 0);
+	throw std::logic_error("The method or operation is not implemented.");
 }
+
+void sandbox::OGLRenderer::preRender(const FRenderable* renderable)
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void sandbox::OGLRenderer::render(const FRenderable* renderable)
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void sandbox::OGLRenderer::postRender(const FRenderable* renderable)
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void sandbox::OGLRenderer::endRendering()
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+// void
+// OGLRenderer::drawVertexArray(OlgGpuVertexBuffer* vao)
+// {
+// 	glDrawArrays(GL_TRIANGLES, 0, vao->getVertexCount());
+// }
+
+// void sandbox::OGLRenderer::drawElementArray(OglGpuIndexBuffer* ib)
+// {
+// 	glDrawElements(GL_TRIANGLES, ib->getSize(), GL_UNSIGNED_SHORT, 0);
+// }
 

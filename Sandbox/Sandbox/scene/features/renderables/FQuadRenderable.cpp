@@ -22,17 +22,17 @@ FQuadRenderable::FQuadRenderable(EEntity* owner) :
 	m_shader->addShader(fsShader);
 	m_shader->compile();
 
-	m_vbo = new GPURawBuffer(9, sizeof(float),  vertex);
-	m_vao = new GPUVertexArray(m_vbo, 3);
+	//m_vbo = new OglGpuRawBuffer(9, sizeof(float),  vertex);
+	//m_vao = new OlgGpuVertexBuffer(m_vbo, 3);
 
 }
 
 void
 FQuadRenderable::render()
 {
-	m_shader->enable();
-	m_vao->bind();
-	RENDERING_SERVICE->drawVertexArray(m_vao);
+// 	m_shader->enable();
+// 	m_vao->bind();
+// 	RENDERING_SERVICE->drawVertexArray(m_vao);
 }
 
 void

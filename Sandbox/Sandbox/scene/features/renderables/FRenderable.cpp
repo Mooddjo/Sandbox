@@ -15,4 +15,8 @@ FRenderable::FRenderable(EEntity* owner, Material* material):
 	}
 }
 
+const Mesh* sandbox::FRenderable::getMesh() const
+{
+	return m_mesh.get();
+}
 
