@@ -4,10 +4,10 @@
 
 namespace sandbox
 {
-	class OlgGpuVertexBuffer: public GpuVertexBuffer
+	class OglGpuVertexBuffer: public GpuVertexBuffer
 	{
 	public:
-		OlgGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount);
+		OglGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount);
 		void bind() const;
 		void unbind() const;
 		unsigned int getVertexCount() { return m_vertexCount; }

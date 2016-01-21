@@ -28,9 +28,9 @@ void sandbox::RenderData::draw() const
 
 	glDrawElements(GL_TRIANGLES, m_indexBuffer->getSize(), GL_UNSIGNED_SHORT, 0);
 
-	m_vertexBuffer->unbind();
-	m_indexBuffer->unbind();
-	m_material->disable();
+	//m_vertexBuffer->unbind();
+	//m_indexBuffer->unbind();
+	//m_material->disable();
 }
 
 

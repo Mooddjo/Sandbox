@@ -106,6 +106,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SANDBOX_DLL;_SCL_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -159,7 +160,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClInclude Include="geometry\Quad.h" />
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuIndexBuffer.h" />
     <ClInclude Include="graphics\buffers\GpuBuffers.h" />
-    <ClInclude Include="graphics\buffers\api\opengl\OlgGpuVertexBuffer.h" />
+    <ClInclude Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.h" />
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuRawBuffer.h" />
     <ClInclude Include="graphics\buffers\RenderData.h" />
     <ClInclude Include="graphics\renderers\api\opengl\AbstractOglRenderer.h" />
@@ -195,7 +196,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="core\Window.cpp" />
     <ClCompile Include="geometry\Quad.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuIndexBuffer.cpp" />
-    <ClCompile Include="graphics\buffers\api\opengl\OlgGpuVertexBuffer.cpp" />
+    <ClCompile Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuRawBuffer.cpp" />
     <ClCompile Include="graphics\buffers\RenderData.cpp" />
     <ClCompile Include="graphics\GraphicsService.cpp" />

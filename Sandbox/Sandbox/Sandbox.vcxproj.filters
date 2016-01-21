@@ -114,9 +114,6 @@
     <ClInclude Include="graphics\buffers\GpuBuffers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\buffers\api\opengl\OlgGpuVertexBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="graphics\GraphicsService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -127,6 +124,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="graphics\renderers\api\opengl\AbstractOglRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -206,9 +206,6 @@
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuRawBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\buffers\api\opengl\OlgGpuVertexBuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="graphics\GraphicsService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -219,6 +216,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="graphics\renderers\api\opengl\AbstractOglRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

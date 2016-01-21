@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{70A41505-67C3-46BF-8DCC-D286D2C7C82F}"
 EndProject
@@ -10,7 +10,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SandboxPlatformer", "Sandbo
 		{70A41505-67C3-46BF-8DCC-D286D2C7C82F} = {70A41505-67C3-46BF-8DCC-D286D2C7C82F}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3AD28E7-BFD2-4475-B768-2C8DC0EFCD62}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86

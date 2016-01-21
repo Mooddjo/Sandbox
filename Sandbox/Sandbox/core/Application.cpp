@@ -183,7 +183,6 @@ Application::ApplicationPImpl::initWindow()
 			nullptr, nullptr);
 
 		glfwSetWindowPos(m_glfwWindow, m_window->getX(), m_window->getY());
-
 		if (!m_glfwWindow)
 		{
 			m_application->stop();

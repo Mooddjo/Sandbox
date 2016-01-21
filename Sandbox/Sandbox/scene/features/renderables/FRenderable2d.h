@@ -1,6 +1,6 @@
 #pragma once
 #include "FRenderable.h"
-#include "OlgGpuVertexBuffer.h"
+#include "OglGpuVertexBuffer.h"
 #include "GPUBuffers.h"
 #include "Shader.h"
 #include "Quad.h"

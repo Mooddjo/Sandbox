@@ -3,6 +3,7 @@
 #include "RenderData.h"
 #include "EventService.h"
 #include "Color.h"
+#include "Timer.h"
 #include <list>
 
 namespace sandbox
@@ -26,6 +27,8 @@ namespace sandbox
 		
 		Color m_clearColor;
 		std::list<const RenderData*> m_renderData;
+		unsigned short m_fpsCounter;
+		Timer m_timer;
 
 	private:
 		void renderableCreatedEvent(IEventData* data);

@@ -24,9 +24,12 @@ bool sandbox::AbstractOglRenderer::init()
 
 	SString glVersion = SString((char*)glGetString(GL_VERSION));
 
+
 	SMARTLOG(glewVersion, kInfo);
 	SMARTLOG("OpenGL version: " + glVersion, kInfo);
 	SMARTLOG("-----SmartRay Initialization Succeeded-----", kInfo);
+
+	
 
 	glClearColor(m_clearColor.r, m_clearColor.g, m_clearColor.b, m_clearColor.a);
 	return true;

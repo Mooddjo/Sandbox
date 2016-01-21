@@ -6,7 +6,7 @@
 
 #if OPENGL
 #include "OglGpuIndexBuffer.h"
-#include "OlgGpuVertexBuffer.h"
+#include "OglGpuVertexBuffer.h"
 #include "OglGpuRawBuffer.h"
 #endif
 
@@ -48,7 +48,7 @@ GpuVertexBuffer* sandbox::GraphicsService::provideGpuVertexArray(const GpuRawBuf
 {
 	GpuVertexBuffer* vertexBuffer = nullptr;
 #if OPENGL
-	vertexBuffer = new OlgGpuVertexBuffer(rawBuffer, vertexCount);
+	vertexBuffer = new OglGpuVertexBuffer(rawBuffer, vertexCount);
 #endif
 
 	return vertexBuffer;

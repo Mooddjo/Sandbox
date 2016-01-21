@@ -1,10 +1,10 @@
-#include "OlgGpuVertexBuffer.h"
+#include "OglGpuVertexBuffer.h"
 #include "GL/glew.h"
 #include "Vertex.h"
 
 using namespace sandbox;
 
-OlgGpuVertexBuffer::OlgGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount):
+OglGpuVertexBuffer::OglGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount):
 	GpuVertexBuffer(rawBuffer, vertexCount)
 {
 	glGenVertexArrays(1, &m_bufferId);
@@ -15,13 +15,13 @@ OlgGpuVertexBuffer::OlgGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned i
 }
 
 void
-OlgGpuVertexBuffer::bind() const
+OglGpuVertexBuffer::bind() const
 {
 	glBindVertexArray(m_bufferId);
 }
 
 void
-OlgGpuVertexBuffer::unbind() const
+OglGpuVertexBuffer::unbind() const
 {
 	glBindVertexArray(0);
 }
