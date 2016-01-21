@@ -179,7 +179,6 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClInclude Include="scene\features\FUpdatable.h" />
     <ClInclude Include="scene\features\renderables\FRenderable.h" />
     <ClInclude Include="scene\features\renderables\FRenderable2d.h" />
-    <ClInclude Include="scene\features\renderables\FQuadRenderable.h" />
     <ClInclude Include="scene\Scene.h" />
     <ClInclude Include="scene\SceneService.h" />
     <ClInclude Include="scene\Transform.h" />
@@ -213,7 +212,6 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="scene\features\FUpdatable.cpp" />
     <ClCompile Include="scene\features\renderables\FRenderable.cpp" />
     <ClCompile Include="scene\features\renderables\FRenderable2d.cpp" />
-    <ClCompile Include="scene\features\renderables\FQuadRenderable.cpp" />
     <ClCompile Include="scene\Scene.cpp" />
     <ClCompile Include="scene\SceneService.cpp" />
     <ClCompile Include="scene\Transform.cpp" />

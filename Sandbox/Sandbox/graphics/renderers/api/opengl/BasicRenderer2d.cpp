@@ -51,5 +51,6 @@ void sandbox::BasicRenderer2d::endRendering()
 bool sandbox::BasicRenderer2d::init()
 {
 	m_timer.start();
+	//glViewport(0, 0, 1280, 720);
 	return AbstractOglRenderer::init();
 }

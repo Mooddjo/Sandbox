@@ -75,9 +75,6 @@
     <ClInclude Include="scene\entities\EQuad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="scene\features\renderables\FQuadRenderable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="geometry\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -177,9 +174,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="scene\entities\EQuad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="scene\features\renderables\FQuadRenderable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="geometry\Mesh.cpp">

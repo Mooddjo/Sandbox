@@ -11,8 +11,15 @@ class MyApplication : public sandbox::Application
 public:
 	void engineReady()
 	{
-		EQuad* quad = new EQuad(4.0);
+		unsigned int maxEntity = 1000;
 		Scene* s = new Scene();
+// 		for (int i = 0; i < 1000; ++i)
+// 		{
+// 			EQuad* quad = new EQuad(4.0);
+// 			s->addObject(quad);
+// 		}
+
+		EQuad* quad = new EQuad(4.0);
 		s->addObject(quad);
 		SceneService::getInstance()->loadScene(s);
 	}
