@@ -6,7 +6,7 @@
 #include "Window.h"
 #include "EventService.h"
 #include "SceneService.h"
-#include "RenderingService.h"
+#include "GraphicsService.h"
 #include "Timer.h"
 //#include "InputService.h"
 
@@ -84,7 +84,7 @@ Application::run()
 	Timer t;
 	if (initSucceeded)
 	{
-		RenderingService::getInstance();
+		GraphicsService* graphicsService = GraphicsService::getInstance();
 		EventService::getInstance();
 		engineReady();
 		m_pImpl->setStatus(onRun);
@@ -95,8 +95,7 @@ Application::run()
 			while (!glfwWindowShouldClose(m_pImpl->m_glfwWindow))
 			{
 				SceneService::getInstance()->update(t.eleapsed());
-
-				RenderingService::getInstance()->render();
+				graphicsService->render();
 				glfwSwapBuffers(m_pImpl->m_glfwWindow);
 				glfwPollEvents();
 				t.end();

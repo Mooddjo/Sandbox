@@ -4,7 +4,7 @@
 
 using namespace sandbox;
 
-OlgGpuVertexBuffer::OlgGpuVertexBuffer(GpuRawBuffer* rawBuffer, unsigned int vertexCount):
+OlgGpuVertexBuffer::OlgGpuVertexBuffer(const GpuRawBuffer* rawBuffer, unsigned int vertexCount):
 	GpuVertexBuffer(rawBuffer, vertexCount)
 {
 	glGenVertexArrays(1, &m_bufferId);

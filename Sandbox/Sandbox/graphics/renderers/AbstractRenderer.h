@@ -1,6 +1,7 @@
 #pragma once
 #include "FRenderable.h"
 #include "RenderData.h"
+#include "EventService.h"
 #include "Color.h"
 #include <list>
 
@@ -9,9 +10,9 @@ namespace sandbox
 	class AbstractRenderer
 	{
 	public:
+		AbstractRenderer();
 		virtual bool init() = 0;
-		virtual bool process() = 0;
-
+		virtual void process() = 0;
 
 	protected:
 		virtual void renderable2dCreated(const FRenderable* renderable);
@@ -25,5 +26,8 @@ namespace sandbox
 		
 		Color m_clearColor;
 		std::list<const RenderData*> m_renderData;
+
+	private:
+		void renderableCreatedEvent(IEventData* data);
 	};
 }

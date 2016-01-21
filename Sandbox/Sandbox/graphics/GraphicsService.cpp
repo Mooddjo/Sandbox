@@ -18,7 +18,10 @@ using namespace sandbox;
 
 sandbox::GraphicsService::GraphicsService()
 {
-
+#if OPENGL
+	m_renderer2d = new BasicRenderer2d();
+	m_renderer2d->init();
+#endif
 }
 
 GpuRawBuffer* sandbox::GraphicsService::provideGpuRawBuffer(unsigned int size, unsigned int elementSize, const void* data)
@@ -35,7 +38,7 @@ GpuIndexBuffer* sandbox::GraphicsService::provideGpuIndexBuffer(unsigned int siz
 {
 	GpuIndexBuffer* indexBuffer = nullptr;
 #if OPENGL
-	indexBuffer = new OglGpuIndexBuffer();
+	indexBuffer = new OglGpuIndexBuffer(size, data);
 #endif
 
 	return indexBuffer;
@@ -51,7 +54,12 @@ GpuVertexBuffer* sandbox::GraphicsService::provideGpuVertexArray(const GpuRawBuf
 	return vertexBuffer;
 }
 
-IRenderer2d* sandbox::GraphicsService::getRenderer2d()
+void sandbox::GraphicsService::render()
+{
+	m_renderer2d->process();
+}
+
+AbstractRenderer* sandbox::GraphicsService::getRenderer2d()
 {
 	if (m_renderer2d)
 	{
@@ -66,7 +74,8 @@ IRenderer2d* sandbox::GraphicsService::getRenderer2d()
 
 }
 
-IRenderer3d* sandbox::GraphicsService::getRenderer3d()
+AbstractRenderer* sandbox::GraphicsService::getRenderer3d()
 {
 	std::logic_error("Not implemented yet");
+	return nullptr;
 }

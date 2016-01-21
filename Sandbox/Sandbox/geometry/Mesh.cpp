@@ -57,9 +57,9 @@ Mesh::getIndicesPointer() const
 	return (&m_indices[0]);
 }
 
-const void* sandbox::Mesh::getVerticesPointer()
+const void* sandbox::Mesh::getVerticesPointer() const
 {
-	return (&m_vertices[0]);
+	return m_vertices.data();
 }
 
 

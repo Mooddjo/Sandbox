@@ -162,14 +162,13 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClInclude Include="graphics\buffers\api\opengl\OlgGpuVertexBuffer.h" />
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuRawBuffer.h" />
     <ClInclude Include="graphics\buffers\RenderData.h" />
+    <ClInclude Include="graphics\renderers\api\opengl\AbstractOglRenderer.h" />
     <ClInclude Include="graphics\renderers\api\opengl\BasicRenderer2d.h" />
     <ClInclude Include="graphics\renderers\AbstractRenderer.h" />
     <ClInclude Include="graphics\materials\Material.h" />
     <ClInclude Include="graphics\materials\MaterialProperty.h" />
     <ClInclude Include="geometry\Mesh.h" />
     <ClInclude Include="graphics\materials\OGLMaterialProperty.h" />
-    <ClInclude Include="graphics\renderers\OGLRenderer.h" />
-    <ClInclude Include="graphics\renderers\RenderingService.h" />
     <ClInclude Include="graphics\materials\Shader.h" />
     <ClInclude Include="geometry\Vertex.h" />
     <ClInclude Include="math\MathUtils.h" />
@@ -202,10 +201,9 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="graphics\GraphicsService.cpp" />
     <ClCompile Include="graphics\materials\Material.cpp" />
     <ClCompile Include="geometry\Mesh.cpp" />
+    <ClCompile Include="graphics\renderers\api\opengl\AbstractOglRenderer.cpp" />
     <ClCompile Include="graphics\renderers\api\opengl\BasicRenderer2d.cpp" />
     <ClCompile Include="graphics\renderers\AbstractRenderer.cpp" />
-    <ClCompile Include="graphics\renderers\OGLRenderer.cpp" />
-    <ClCompile Include="graphics\renderers\RenderingService.cpp" />
     <ClCompile Include="graphics\materials\Shader.cpp" />
     <ClCompile Include="geometry\Vertex.cpp" />
     <ClCompile Include="scene\entities\EEntity.cpp" />

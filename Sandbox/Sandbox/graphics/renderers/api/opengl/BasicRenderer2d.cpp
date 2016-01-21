@@ -1,19 +1,12 @@
 #include "BasicRenderer2d.h"
+#include "GL/glew.h"
+#include "SmartLogger.h"
+#include "EventService.h"
 
 using namespace sandbox;
 using namespace std;
 
-bool sandbox::BasicRenderer2d::init()
-{
-	m_clearColor.r = 0.2;
-	m_clearColor.g = 0.2;
-	m_clearColor.b = 0.2;
-	m_clearColor.a = 1.0;
-
-	return true;
-}
-
-bool sandbox::BasicRenderer2d::process()
+void sandbox::BasicRenderer2d::process()
 {
 	beginRendering();
 	for (auto renderData : m_renderData)
@@ -21,18 +14,18 @@ bool sandbox::BasicRenderer2d::process()
 		render(renderData);
 	}
 	endRendering();
+	clearFrame();
 }
 
 
 void sandbox::BasicRenderer2d::beginRendering()
 {
-	
 }
 
 
-void sandbox::BasicRenderer2d::render(const RenderData* renderable)
+void sandbox::BasicRenderer2d::render(const RenderData* renderData)
 {
-
+	renderData->draw();
 }
 
 
@@ -40,7 +33,7 @@ void sandbox::BasicRenderer2d::endRendering()
 {
 }
 
-void sandbox::BasicRenderer2d::clearFrame()
+bool sandbox::BasicRenderer2d::init()
 {
-
+	return AbstractOglRenderer::init();
 }

@@ -9,6 +9,7 @@ namespace sandbox
 	{
 	public:
 		RenderData(const FRenderable* renderable);
+		void draw() const;
 
 	private:
 		GpuRawBuffer* m_dataBuffer;

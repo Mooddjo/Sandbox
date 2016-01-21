@@ -2,8 +2,7 @@
 
 #include "Singleton.h"
 #include "GpuBuffers.h"
-#include "IRenderer2d.h"
-#include "IRenderer3d.h"
+#include "AbstractRenderer.h"
 
 namespace sandbox
 {
@@ -17,10 +16,10 @@ namespace sandbox
 		GpuIndexBuffer* provideGpuIndexBuffer(unsigned int size, const void* data);
 		GpuVertexBuffer* provideGpuVertexArray(const GpuRawBuffer* rawBuffer, unsigned int vertexCount);
 		void render();
-		IRenderer2d* getRenderer2d();
-		IRenderer3d* getRenderer3d();
+		AbstractRenderer* getRenderer2d();
+		AbstractRenderer* getRenderer3d();
 
 	private:
-		IRenderer2d* m_renderer2d;
+		AbstractRenderer* m_renderer2d;
 	};
 }

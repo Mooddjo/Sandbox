@@ -1,5 +1,6 @@
 #include "RenderData.h"
 #include "GraphicsService.h"
+#include "GL/glew.h"
 
 using namespace sandbox;
 
@@ -13,12 +14,24 @@ sandbox::RenderData::RenderData(const FRenderable* renderable)
 	m_dataBuffer = graphicsService->provideGpuRawBuffer(
 		renderable->getMesh()->getVerticesCount(), 
 		renderable->getMesh()->getVertexSize(),
-		renderable->getMesh()->getVerticesPointer);
+		renderable->getMesh()->getVerticesPointer());
 
 	m_indexBuffer = graphicsService->provideGpuIndexBuffer(renderable->getMesh()->getIndexCount(), renderable->getMesh()->getIndicesPointer());
 	m_vertexBuffer = graphicsService->provideGpuVertexArray(m_dataBuffer, renderable->getMesh()->getVerticesCount());
 }
 
+void sandbox::RenderData::draw() const
+{
+	m_material->enable();
+	m_vertexBuffer->bind();
+	m_indexBuffer->bind();
+
+	glDrawElements(GL_TRIANGLES, m_indexBuffer->getSize(), GL_UNSIGNED_SHORT, 0);
+
+	m_vertexBuffer->unbind();
+	m_indexBuffer->unbind();
+	m_material->disable();
+}
 
 
 

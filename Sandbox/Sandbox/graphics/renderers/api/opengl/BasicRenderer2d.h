@@ -1,20 +1,19 @@
 #pragma once
 
-#include "AbstractRenderer.h"
+#include "AbstractOglRenderer.h"
 
 namespace sandbox
 {
-	class BasicRenderer2d : public AbstractRenderer
+	class BasicRenderer2d : public AbstractOglRenderer
 	{
 	public:
-		virtual bool init() override;
-		virtual bool process() override;
+		virtual void process() override;
 	protected:
 
+		virtual bool init() override;
 		virtual void beginRendering() override;
-		virtual void render(const RenderData* renderable) override;
+		virtual void render(const RenderData* renderData) override;
 		virtual void endRendering() override;
-		virtual void clearFrame() override;
 
 	};
 }

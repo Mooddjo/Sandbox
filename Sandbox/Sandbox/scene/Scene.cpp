@@ -9,13 +9,6 @@ Scene::addObject(EEntity* object)
 	m_entities.push_back(sharedObject);
 }
 
-// void
-// Scene::setCamera(Camera* camera)
-// {
-// 	m_camera = std::shared_ptr<Camera>(camera);
-// 	this->addObject(camera);
-// }
-
 void
 Scene::findObject(std::string name)
 {

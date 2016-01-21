@@ -1,7 +1,6 @@
 #include "FQuadRenderable.h"
 #include "SmartLogger.h"
 #include <iostream>
-#include "RenderingService.h"
 
 using namespace sandbox;
 

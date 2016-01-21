@@ -16,7 +16,7 @@ namespace sandbox
 		void addIndex(vec3 index);
 		const std::vector<Vertex>& getVertices() const;
 		const std::vector<unsigned short>& getIndices() const;
-		const void* getVerticesPointer();
+		const void* getVerticesPointer() const;
 		const unsigned short* getIndicesPointer() const;
 		unsigned int getVerticesCount() const;
 		unsigned int getIndexCount() const;

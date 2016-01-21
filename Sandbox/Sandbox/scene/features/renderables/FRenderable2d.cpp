@@ -1,6 +1,5 @@
 #include "FRenderable2d.h"
-
-#include "RenderingService.h"
+#include "EventService.h"
 #include "Vertex.h"
 
 using namespace sandbox;
@@ -16,15 +15,11 @@ FRenderable2d::FRenderable2d(EEntity* owner) :
 void
 FRenderable2d::init()
 {
-
+	EvFeatureCreated<FRenderable>* feature = new EvFeatureCreated<FRenderable>(this);
+	EventService::getInstance()->fireEvent(EVENT_RENDER_FEATURE_CREATED, feature);
 }
 
 void
 FRenderable2d::render()
 {
-// 	m_material->enable();
-// 	m_vao->bind();
-// 	m_ib->bind();
-// 	RENDERING_SERVICE->drawElementArray(m_ib.get());
-// 	m_material->disable();
 }
