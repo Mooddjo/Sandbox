@@ -44,7 +44,7 @@ void sandbox::FRenderable::updateMaterial()
 	{
 		if (m_mesh)
 		{
-			mat4x4 modelMatrix = getOwner()->getTransform()->getWorldMatrix();
+			
 		}
 	}
 }

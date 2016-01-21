@@ -3,6 +3,8 @@
 #include <iostream>
 #include "SString.h"
 
+#define OPENGL 1
+
 namespace sandbox
 {
 	enum PropertyType
@@ -66,6 +68,6 @@ namespace sandbox
 
 }
 
-#ifdef OPENGL_API
+#if OPENGL
 #include "OGLMaterialProperty.h"
 #endif
