@@ -14,7 +14,7 @@ namespace sandbox
 	public:
 		Material();
 		void setShader(ShaderProgram* shaderProgram);
-		void enable() const { m_shader->enable(); }
+		void enable() const;
 		void disable() const { m_shader->disable(); }
 		void addProperty(MaterialProperty* property);
 		const std::map<SString, MaterialProperty*>& getProperties();

@@ -1,4 +1,5 @@
 #include "Material.h"
+#include "SString.h"
 
 using namespace sandbox;
 
@@ -10,6 +11,8 @@ Material::Material()
 	m_shader->addShader(vsShader);
 	m_shader->addShader(fsShader);
 	m_shader->compile();
+	MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.3, 0.4, 0.2, 1.0), kVec4);
+	addProperty(colorProp);
 }
 
 void Material::setShader(ShaderProgram* shaderProgram)
@@ -29,4 +32,14 @@ void Material::addProperty(MaterialProperty* property)
 const std::map<SString, MaterialProperty*>& Material::getProperties()
 {
 	return m_properties;
+}
+
+void sandbox::Material::enable() const
+{
+	m_shader->enable();
+	for (auto it : m_properties)
+	{
+		MaterialProperty* prop = it.second;
+		prop->submit(m_shader->getId());
+	}
 }

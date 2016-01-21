@@ -19,7 +19,8 @@ void sandbox::BasicRenderer2d::process()
 	unsigned int err = glGetError();
 	if (err != GL_NO_ERROR)
 	{
-		SMARTLOG("OpenGL error:" + (char)err, kInfo);
+		std::string message ="OpenGL error:" + std::to_string(err) ;
+		SMARTLOG(message.c_str(), kInfo);
 	}
 	m_fpsCounter++;
 	double eleapsedTime = m_timer.eleapsed();

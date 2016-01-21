@@ -29,7 +29,7 @@ namespace sandbox
 			GenericValue(SString name, PropertyType type) : m_name(name), m_type(type) {};
 			SString m_name;
 			PropertyType m_type;
-			virtual void submit() = 0;
+			virtual void submit(unsigned int materialId) = 0;
 		};
 
 		template<typename T>
@@ -40,7 +40,7 @@ namespace sandbox
 			{
 				data = value;
 			}
-			virtual void submit() override
+			virtual void submit(unsigned int materialId) override
 			{
 				throw std::logic_error("Material type specialization has to be defined");
 			};
@@ -55,14 +55,11 @@ namespace sandbox
 			return matProp;
 		}
 
-		void submit() const { m_value->submit(); }
+		void submit(unsigned int materialId) const { m_value->submit(materialId); }
 		SString getName() { return m_value->m_name; }
 
 	private:
 		GenericValue* m_value;
-
-
-
 	};
 
 
