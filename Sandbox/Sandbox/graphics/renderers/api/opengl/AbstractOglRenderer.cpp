@@ -5,10 +5,10 @@ using namespace sandbox;
 
 bool sandbox::AbstractOglRenderer::init()
 {
-	m_clearColor.r = 0.2;
-	m_clearColor.g = 0.2;
-	m_clearColor.b = 0.2;
-	m_clearColor.a = 1.0;
+	m_clearColor.r = 0.2f;
+	m_clearColor.g = 0.2f;
+	m_clearColor.b = 0.2f;
+	m_clearColor.a = 1.0f;
 
 	SMARTLOG("-----SmartRay Initialization-----", kInfo);
 	glewExperimental = GL_TRUE;

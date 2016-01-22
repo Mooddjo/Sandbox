@@ -13,18 +13,35 @@ namespace sandbox
 	{
 	public:
 		Material();
+		~Material();
 		void setShader(ShaderProgram* shaderProgram);
 		void enable() const;
 		void disable() const { m_shader->disable(); }
-		void addProperty(MaterialProperty* property);
+		template<typename T> void setProperty(SString name, T value);
+		const MaterialProperty* getProperty(SString name) const;
 		const std::map<SString, MaterialProperty*>& getProperties();
 
 	private:
+		MaterialProperty* getProperty(SString name);
+		void setProperty(MaterialProperty* property);
 		std::map<SString, MaterialProperty*> m_properties;
 		SString m_name;
 		std::shared_ptr<ShaderProgram> m_shader;
 	};
 
+	template<typename T>
+	void sandbox::Material::setProperty(SString name, T value)
+	{
+		MaterialProperty* matProp = getProperty(name);
+		if (matProp)
+		{
+			matProp->m_value = value;
+		}
+		else {
+			MaterialProperty* mat = std::shared_ptr<Material>(MaterialProperty::create(name, value));
+			setProperty(mat);
+		}
+	}
 	
 
 }

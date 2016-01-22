@@ -33,9 +33,9 @@ Mesh::addIndex(unsigned short index)
 void
 Mesh::addIndex(vec3 index)
 {
-	m_indices.push_back(index.x);
-	m_indices.push_back(index.y);
-	m_indices.push_back(index.z);
+	m_indices.push_back((unsigned short)index.x);
+	m_indices.push_back((unsigned short)index.y);
+	m_indices.push_back((unsigned short)index.z);
 }
 
 
@@ -65,7 +65,7 @@ const void* sandbox::Mesh::getVerticesPointer() const
 
 unsigned int sandbox::Mesh::getIndexCount() const
 {
-	return m_indices.size();
+	return (unsigned int)m_indices.size();
 }
 
 void sandbox::Mesh::clearIndices()
@@ -93,5 +93,5 @@ Mesh::getVertexSize() const
 unsigned int
 Mesh::getVerticesCount() const
 {
-	return m_vertices.size();
+	return (unsigned int)m_vertices.size();
 }

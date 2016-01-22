@@ -10,3 +10,4 @@
 #include "FRenderable2d.h"
 
 #include "Material.h"
+#include "MaterialProperty.h"

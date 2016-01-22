@@ -49,7 +49,7 @@ namespace sandbox
 	unsigned int
 		SString::length()
 	{
-		return m_stringPImpl->internalStringImpl.length();
+		return (unsigned int)m_stringPImpl->internalStringImpl.length();
 	}
 
 	bool

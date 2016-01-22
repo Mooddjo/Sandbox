@@ -72,6 +72,8 @@ AbstractRenderer* sandbox::GraphicsService::getRenderer2d()
 #endif
 	}
 
+	return m_renderer2d;
+
 }
 
 AbstractRenderer* sandbox::GraphicsService::getRenderer3d()

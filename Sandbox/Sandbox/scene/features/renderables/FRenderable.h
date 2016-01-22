@@ -17,7 +17,7 @@ namespace sandbox
 	public:
 		FRenderable(EEntity* owner, Material* material = nullptr);
 		const Mesh* getMesh() const;
-		const Material* getMaterial() const;
+		Material* getMaterial() const;
 		void setMaterial(Material* material);
 		virtual void render() = 0;
 		virtual void init() override = 0;

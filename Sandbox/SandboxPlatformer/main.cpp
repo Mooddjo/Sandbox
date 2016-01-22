@@ -21,6 +21,15 @@ public:
 
 		EQuad* quad = new EQuad(4.0);
 		s->addObject(quad);
+		FRenderable* f = quad->getFeature<FRenderable2d>();
+		Material* mat = f->getMaterial();
+
+
+		//MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.1f, 0.2f, 0.3f, 1.0f), kVec4);
+		MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.6f, 0.2f, 0.3f, 1.0f), kVec4);
+		
+
+		mat->setProperty(colorProp);
 		SceneService::getInstance()->loadScene(s);
 	}
 };
