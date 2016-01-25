@@ -24,6 +24,6 @@ namespace sandbox
 	{
 		unsigned int location = glGetUniformLocation(materialId, m_name.getCString());
 		float* mat = glm::value_ptr(data);
-		glUniform4fv(location, 16, mat);
+		glUniformMatrix4fv(location, 1,  GL_FALSE, mat);
 	}
 }

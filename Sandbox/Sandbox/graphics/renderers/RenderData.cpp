@@ -20,12 +20,13 @@ sandbox::RenderData::RenderData(const FRenderable* renderable)
 
 	m_indexBuffer = graphicsService->provideGpuIndexBuffer(renderable->getMesh()->getIndexCount(), renderable->getMesh()->getIndicesPointer());
 	m_vertexBuffer = graphicsService->provideGpuVertexArray(m_dataBuffer, renderable->getMesh()->getVerticesCount());
-	//m_material->setProperty("uModelMatrix", m_modelMatrix->getLocalMatrix());
+	
 }
 
 void sandbox::RenderData::draw() const
 {
 	m_material->enable();
+	m_material->setProperty("u_modelMatrix", m_modelMatrix->getLocalMatrix());
 	m_vertexBuffer->bind();
 	m_indexBuffer->bind();
 
