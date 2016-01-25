@@ -11,8 +11,9 @@ Material::Material()
 	m_shader->addShader(vsShader);
 	m_shader->addShader(fsShader);
 	m_shader->compile();
-	MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.3, 0.4, 0.2, 1.0), kVec4);
-	setProperty(colorProp);
+	setProperty("uColor", vec4(0.3, 0.7, 0.9, 1.0));
+	//MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.3, 0.4, 0.2, 1.0));
+	//setProperty(colorProp);
 }
 
 void Material::setShader(ShaderProgram* shaderProgram)

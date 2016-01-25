@@ -26,9 +26,8 @@ namespace sandbox
 		class GenericValue
 		{
 		public:
-			GenericValue(SString name, PropertyType type) : m_name(name), m_type(type) {};
+			GenericValue(SString name) : m_name(name) {};
 			SString m_name;
-			PropertyType m_type;
 			virtual void submit(unsigned int materialId) = 0;
 		};
 
@@ -36,7 +35,7 @@ namespace sandbox
 		class Value : public GenericValue
 		{
 		public:
-			Value(SString name, T value, PropertyType type) :GenericValue(name, type)
+			Value(SString name, T value) :GenericValue(name)
 			{
 				data = value;
 			}
@@ -48,18 +47,19 @@ namespace sandbox
 		};
 
 	public:
-		template<typename T> static MaterialProperty* create(SString name, T value, PropertyType type)
+		template<typename T> static MaterialProperty* create(SString name, T value)
 		{
 			MaterialProperty* matProp = new MaterialProperty();
-			matProp->m_value = new Value<T>(name, value, type);
+			matProp->m_value = new Value<T>(name, value);
 			return matProp;
 		}
 
+		template<typename T> void setValue(SString name, T value) { m_value = new Value<T>(name, value); }
 		void submit(unsigned int materialId) const { m_value->submit(materialId); }
 		SString getName() { return m_value->m_name; }
 
-	private:
 		GenericValue* m_value;
+	private:
 	};
 
 

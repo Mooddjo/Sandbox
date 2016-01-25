@@ -14,6 +14,7 @@ namespace sandbox
 	{
 	public:
 		EEntity();
+		const Transform* getTransform() const;
 		Transform* getTransform();
 		void update(double deltaMs);
 		void addFeature(FFeature* feature);
@@ -44,13 +45,13 @@ namespace sandbox
 			}
 		}
 
-		for (auto updatablefeature : m_updatableFeatures)
-		{
-			if (updatablefeature->getName().compare(T::name()) == 0)
-			{
-				return static_cast<T*>(updatablefeature.get());
-			}
-		}
+// 		for (auto updatablefeature : m_updatableFeatures)
+// 		{
+// 			if (updatablefeature->getName().compare(T::name()) == 0)
+// 			{
+// 				return static_cast<T*>(updatablefeature.get());
+// 			}
+// 		}
 		return nullptr;
 	}
 

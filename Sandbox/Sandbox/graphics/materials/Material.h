@@ -35,10 +35,10 @@ namespace sandbox
 		MaterialProperty* matProp = getProperty(name);
 		if (matProp)
 		{
-			matProp->m_value = value;
+			matProp->setValue(name, value);
 		}
 		else {
-			MaterialProperty* mat = std::shared_ptr<Material>(MaterialProperty::create(name, value));
+			MaterialProperty* mat = MaterialProperty::create(name, value);
 			setProperty(mat);
 		}
 	}

@@ -2,6 +2,7 @@
 
 #include "FRenderable.h"
 #include "GpuBuffers.h"
+#include "Transform.h"
 
 namespace sandbox
 {
@@ -16,5 +17,6 @@ namespace sandbox
 		GpuVertexBuffer* m_vertexBuffer;
 		GpuIndexBuffer* m_indexBuffer;
 		Material* m_material;
+		const Transform* m_modelMatrix;
 	};
 }

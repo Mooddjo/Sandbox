@@ -30,9 +30,9 @@ Transform::getWorldMatrix() const
 }
 
 void
-Transform::setPosition(glm::vec4 position)
+Transform::setPosition(glm::vec3 position)
 {
-	m_localMatrix[3] = position;
+	m_localMatrix[3] = vec4(position,1.0);
 }
 
 glm::vec4

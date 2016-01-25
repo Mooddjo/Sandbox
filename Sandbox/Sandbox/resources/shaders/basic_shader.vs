@@ -2,6 +2,7 @@
 
 in vec3 vp;
 
+
 void
 main()
 {

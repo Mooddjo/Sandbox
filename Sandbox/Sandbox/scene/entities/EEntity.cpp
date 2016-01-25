@@ -14,10 +14,15 @@ EEntity::EEntity():
 	s_idCounter++;
 }
 
-Transform* 
-EEntity::getTransform()
+const Transform* 
+EEntity::getTransform() const
 {
 	return &m_transform;
+}
+
+Transform* sandbox::EEntity::getTransform()
+{
+	return const_cast<Transform*>(static_cast<const EEntity&>(*this).getTransform());
 }
 
 void

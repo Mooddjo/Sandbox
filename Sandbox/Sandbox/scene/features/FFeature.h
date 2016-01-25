@@ -21,7 +21,7 @@ namespace sandbox
 	public:
 		FFeature(EEntity* owner);
 		virtual void init() = 0;
-		EEntity* getOwner() const { return m_owner; }
+		const EEntity* getOwner() const { return m_owner; }
 		bool isEnable() const { return m_isEnable; }
 		void setEnable(bool val) { m_isEnable = val; }
 

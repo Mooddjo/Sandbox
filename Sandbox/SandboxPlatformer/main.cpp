@@ -23,13 +23,8 @@ public:
 		s->addObject(quad);
 		FRenderable* f = quad->getFeature<FRenderable2d>();
 		Material* mat = f->getMaterial();
-
-
-		//MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.1f, 0.2f, 0.3f, 1.0f), kVec4);
-		MaterialProperty* colorProp = MaterialProperty::create(SString("uColor"), vec4(0.6f, 0.2f, 0.3f, 1.0f), kVec4);
-		
-
-		mat->setProperty(colorProp);
+		quad->getTransform()->setPosition(vec3(-2.0f, -2.0f, 0.0f));
+		mat->setProperty("uColor", vec4(0.8f, 0.9f, 0.4f, 1.0f));
 		SceneService::getInstance()->loadScene(s);
 	}
 };

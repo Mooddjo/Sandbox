@@ -1,6 +1,7 @@
 #include "RenderData.h"
 #include "GraphicsService.h"
 #include "GL/glew.h"
+#include "EEntity.h"
 
 using namespace sandbox;
 
@@ -10,6 +11,7 @@ sandbox::RenderData::RenderData(const FRenderable* renderable)
 {
 	auto graphicsService = GraphicsService::getInstance();
 	m_material = renderable->getMaterial();
+	m_modelMatrix = renderable->getOwner()->getTransform();
 
 	m_dataBuffer = graphicsService->provideGpuRawBuffer(
 		renderable->getMesh()->getVerticesCount(), 
@@ -18,6 +20,7 @@ sandbox::RenderData::RenderData(const FRenderable* renderable)
 
 	m_indexBuffer = graphicsService->provideGpuIndexBuffer(renderable->getMesh()->getIndexCount(), renderable->getMesh()->getIndicesPointer());
 	m_vertexBuffer = graphicsService->provideGpuVertexArray(m_dataBuffer, renderable->getMesh()->getVerticesCount());
+	//m_material->setProperty("uModelMatrix", m_modelMatrix->getLocalMatrix());
 }
 
 void sandbox::RenderData::draw() const
