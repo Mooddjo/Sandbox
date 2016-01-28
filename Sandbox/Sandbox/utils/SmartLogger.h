@@ -24,7 +24,7 @@ namespace sandbox
 		virtual void write(SString message, LogLevel level = kInfo)const  = 0;
 	};
 
-	class ConsoleLogWriter : public ILogWriter
+	class DLL_SPEC ConsoleLogWriter : public ILogWriter
 	{
 	public:
 		virtual void write(SString message, LogLevel level) const override;
@@ -40,7 +40,7 @@ namespace sandbox
 	};
 
 
-	class SmartLogger : public Singleton<SmartLogger>
+	class DLL_SPEC SmartLogger : public Singleton<SmartLogger>
 	{
 		friend class Singleton<SmartLogger>;
 

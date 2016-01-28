@@ -20,11 +20,12 @@ namespace sandbox
 		Transform* getChild(SString& name) const;
 		Transform* getChild(unsigned int index) const;
 
+		void rotateAboutY(float angle);
 		mat4x4 getLocalMatrix() const;
 		mat4x4 getWorldMatrix() const;
 		void setPosition(vec3 position);
 		vec4 getPositiion();
-		EEntity* getEnity() const;
+		EEntity* getEntity() const;
 
 	private:
 		mat4x4 m_localMatrix;

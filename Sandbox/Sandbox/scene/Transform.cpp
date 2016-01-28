@@ -42,7 +42,7 @@ Transform::getPositiion()
 }
 
 EEntity*
-Transform::getEnity() const
+Transform::getEntity() const
 {
 	return m_entity;
 }
@@ -63,4 +63,15 @@ void sandbox::Transform::addChild(Transform* child)
 {
 	throw std::logic_error("The method or operation is not implemented.");
 
+}
+
+void sandbox::Transform::rotateAboutY(float angle)
+{
+	mat4x4 rotationMatrix(
+		cos(angle), 0.0, sin(angle), 0.0,
+		0.0, 1.0, 0.0, 0.0,
+		-sin(angle), 0.0, cos(angle), 0.0,
+		0.0, 0.0, 0.0, 1.0);
+
+	m_localMatrix *= rotationMatrix;
 }

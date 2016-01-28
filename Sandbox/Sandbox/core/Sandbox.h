@@ -6,6 +6,8 @@
 #include "SceneService.h"
 
 #include "EEntity.h"
+#include "FFeature.h"
+#include "FUpdatable.h"
 #include "EQuad.h"
 #include "FRenderable2d.h"
 

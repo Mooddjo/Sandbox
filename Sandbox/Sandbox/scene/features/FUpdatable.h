@@ -3,11 +3,12 @@
 
 namespace sandbox
 {
-	class FUpdatable : public FFeature
+	class DLL_SPEC FUpdatable : public FFeature
 	{
 		DECLARE_FEATURE(FUpdatable)
 	public:
 		FUpdatable(EEntity* owner): FFeature(owner){}
+		virtual void init() override = 0;
 		virtual void update(double deltaMs) = 0;
 		
 	};

@@ -23,7 +23,7 @@ Timer::eleapsed()
 	end();
 	int elapsedNs = (int)std::chrono::duration_cast<std::chrono::nanoseconds>(m_end - m_start).count();
 
-	double elapsedMs = elapsedNs / 1000000.0;
+	double elapsedMs = elapsedNs / 1000000.0;	
 
 	return elapsedMs;
 }

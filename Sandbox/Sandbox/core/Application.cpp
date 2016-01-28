@@ -95,10 +95,10 @@ Application::run()
 			while (!glfwWindowShouldClose(m_pImpl->m_glfwWindow))
 			{
 				SceneService::getInstance()->update(t.eleapsed());
+				t.start();
 				graphicsService->render();
 				glfwSwapBuffers(m_pImpl->m_glfwWindow);
 				glfwPollEvents();
-				t.end();
 			}
 			stop();
 		}

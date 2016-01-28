@@ -3,8 +3,34 @@
 #include "gl/glew.h"
 #include "Sandbox.h"
 
+
 using namespace sandbox;
 using namespace std;
+
+
+
+class MyScript : public FUpdatable
+{
+	DECLARE_FEATURE(MyScript)
+
+public:
+	MyScript(EEntity* owner) :FUpdatable(owner) {}
+
+	virtual void update(double deltaMs) override
+	{
+		//SMARTLOG("coucou", kInfo);
+		Transform* t = getOwner()->getTransform();
+		t->rotateAboutY(0.005f * deltaMs);
+	}
+
+	virtual void init() override
+	{
+		
+	}
+
+
+
+};
 
 class MyApplication : public sandbox::Application
 {
@@ -20,6 +46,8 @@ public:
 // 		}
 
 		EQuad* quad = new EQuad(4.0);
+		MyScript* scriptFeature = new MyScript(quad);
+		quad->addFeature(scriptFeature);
 		s->addObject(quad);
 		FRenderable* f = quad->getFeature<FRenderable2d>();
 		Material* mat = f->getMaterial();
@@ -28,6 +56,7 @@ public:
 		SceneService::getInstance()->loadScene(s);
 	}
 };
+
 
 int
 main(int argc, char* argv[])
