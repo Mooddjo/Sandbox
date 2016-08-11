@@ -1,7 +1,8 @@
 #pragma once
 
 #include "Platform.h"
-#include "gl/glew.h"
+//#include "gl/glew.h"
+#include <OpenGL/gl3.h>
 #include "SString.h"
 #include <map>
 #include <iostream>
@@ -13,7 +14,7 @@ namespace sandbox
 		FRAGMENT_SHADER = GL_FRAGMENT_SHADER,
 		VERTEX_SHADER = GL_VERTEX_SHADER,
 		GEOMETRY_SHADER = GL_GEOMETRY_SHADER,
-		COMPUTE_SHADER = GL_COMPUTE_SHADER
+		//COMPUTE_SHADER = GL_COMPUTE_SHADER
 	};
 	class DLL_SPEC Shader
 	{
