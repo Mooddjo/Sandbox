@@ -55,7 +55,7 @@ namespace sandbox
 		}
 
 		template<typename T> void setValue(SString name, T value) { m_value = new Value<T>(name, value); }
-		void submit(unsigned int materialId) const { m_value->submit(materialId); }
+		inline void submit(unsigned int materialId) const { m_value->submit(materialId); }
 		SString getName() { return m_value->m_name; }
 
 		GenericValue* m_value;

@@ -7,6 +7,8 @@ Material::Material()
 {
 	Shader* vsShader = Shader::createShader("./resources/shaders/basic_shader.vs", VERTEX_SHADER);
 	Shader* fsShader = Shader::createShader("./resources/shaders/basic_shader.fs", FRAGMENT_SHADER);
+//    Shader* vsShader = Shader::createShader("basic_shader.vs", VERTEX_SHADER);
+//    Shader* fsShader = Shader::createShader("basic_shader.fs", FRAGMENT_SHADER);
 	m_shader = std::shared_ptr<ShaderProgram>(ShaderProgram::createShaderProgram());
 	m_shader->addShader(vsShader);
 	m_shader->addShader(fsShader);

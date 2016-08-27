@@ -1,7 +1,9 @@
+#include <GL/glew.h>
+#include <glfw3.h>
+
+
 #include "Application.h"
 #include "SmartLogger.h"
-#include "gl/glew.h"
-#include "glfw3.h"
 #include "MathUtils.h"
 #include "Window.h"
 #include "EventService.h"
@@ -98,6 +100,7 @@ Application::run()
 				t.start();
 				graphicsService->render();
 				glfwSwapBuffers(m_pImpl->m_glfwWindow);
+
 				glfwPollEvents();
 			}
 			stop();
@@ -190,7 +193,7 @@ Application::ApplicationPImpl::initWindow()
 		}
 
 		glfwMakeContextCurrent(m_glfwWindow);
-
+        glfwSwapInterval(0);
 		//glfwSetKeyCallback(m_glfwWindow, keyCallback);
 		//glfwSetMouseButtonCallback(m_glfwWindow, mouseButtonCallback);
 		//glfwSetCursorPosCallback(m_glfwWindow, cursorPositionCallback);

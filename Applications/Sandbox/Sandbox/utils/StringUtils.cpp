@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "SmartLogger.h"
+
 using namespace sandbox;
 using namespace std;
 
@@ -22,7 +24,10 @@ StringUtils::parseFile(SString path)
 			line.append("\n");
 			buffer.append(line);
 		}
-	}
+    }else {
+        SMARTLOG("File not found", kInfo);
+        //throw std::logic_error("File not found");
+    }
 	ifs.close();
 	return SString(buffer.c_str());
 }

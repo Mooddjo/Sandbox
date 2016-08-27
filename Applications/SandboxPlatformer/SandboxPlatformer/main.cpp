@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
-#include "gl/glew.h"
-#include "Sandbox.h"
 
+
+
+#include <GL/glew.h>
+#include <OpenGL/OpenGL.h>
+#include <glfw3.h>
+
+#include "Sandbox.h"
 
 using namespace sandbox;
 using namespace std;
@@ -37,7 +42,7 @@ class MyApplication : public sandbox::Application
 public:
 	void engineReady()
 	{
-		unsigned int maxEntity = 1000;
+		//unsigned int maxEntity = 1000;
 		Scene* s = new Scene();
 // 		for (int i = 0; i < 1000; ++i)
 // 		{

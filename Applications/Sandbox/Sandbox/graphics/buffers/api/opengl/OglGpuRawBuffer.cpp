@@ -1,5 +1,5 @@
+#include <GL/glew.h>
 #include "OglGpuRawBuffer.h"
-#include "GL/glew.h"
 
 using namespace sandbox;
 

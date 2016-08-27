@@ -1,5 +1,6 @@
+#include <GL/glew.h>
+
 #include "BasicRenderer2d.h"
-#include "GL/glew.h"
 #include "SmartLogger.h"
 #include "EventService.h"
 #include "Timer.h"

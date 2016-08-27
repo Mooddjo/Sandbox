@@ -7,4 +7,5 @@ void
 main()
 {
 	color = vec4(uColor.r, uColor.g, uColor.b, uColor.a);
+//    color = vec4(0.0, 0.5, 1.0, 1.0);
 }
