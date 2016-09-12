@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../Applications/SandboxRay/SandboxRay.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Applications/SandboxPlatformer/SandboxPlatformer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Applications/OpenGLTests/OpenGLTests.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Applications/Sandbox/IDE/xcode/Sandbox/Sandbox.xcodeproj">
+   </FileRef>
+</Workspace>
