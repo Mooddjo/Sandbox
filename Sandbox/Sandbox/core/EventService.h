@@ -6,7 +6,7 @@
 #include <map>
 #include <list>
 
-#include "SmartLogger.h"
+#include <SmartLogger.h>
 
 #define EVENT_CALLBACK(function, object) std::bind(function, object, std::placeholders::_1)
 #define REGISTER_FOR_EVENT(name, eventCallback) EventService::getInstance()->subscribeToEvent(name, eventCallback)
