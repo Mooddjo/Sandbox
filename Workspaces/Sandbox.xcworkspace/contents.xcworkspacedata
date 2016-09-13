@@ -2,15 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Applications/SandboxRay/SandboxRay.xcodeproj">
+      location = "group:Sandbox/Sandbox.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../Applications/SandboxPlatformer/SandboxPlatformer.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../Applications/OpenGLTests/OpenGLTests.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../Applications/Sandbox/IDE/xcode/Sandbox/Sandbox.xcodeproj">
+      location = "group:SandboxTests/SandboxTests.xcodeproj">
    </FileRef>
 </Workspace>

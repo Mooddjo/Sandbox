@@ -1,8 +1,5 @@
-#include <GL/glew.h>
-
 #include "AbstractOglRenderer.h"
 #include "SmartLogger.h"
-
 
 using namespace sandbox;
 

@@ -1,7 +1,6 @@
-#include <GL/glew.h>
-
 #include "RenderData.h"
 #include "GraphicsService.h"
+#include "GL/glew.h"
 #include "EEntity.h"
 
 using namespace sandbox;
