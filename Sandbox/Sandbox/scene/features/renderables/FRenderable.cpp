@@ -2,6 +2,7 @@
 #include "EventService.h"
 #include "EEntity.h"
 #include "MathUtils.h"
+#include "MaterialManager.h"
 
 using namespace sandbox;
 
@@ -10,7 +11,10 @@ FRenderable::FRenderable(EEntity* owner, Material* material):
 {
 	if (!material)
 	{
-		m_material = std::make_shared<Material>();
+		MaterialManager* matMgr = MaterialManager::getInstance();
+		Material* mat = matMgr->createMaterial("sandbox_diffuse_mat");
+
+		m_material = std::shared_ptr<Material>(mat);
 	}
 	else
 	{

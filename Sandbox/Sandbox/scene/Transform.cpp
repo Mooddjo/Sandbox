@@ -35,6 +35,14 @@ Transform::setPosition(glm::vec3 position)
 	m_localMatrix[3] = vec4(position,1.0);
 }
 
+void
+Transform::setScale(float scale)
+{
+	m_localMatrix[0].x *= scale;
+	m_localMatrix[1].y *= scale;
+	m_localMatrix[2].z *= scale;
+}
+
 glm::vec4
 Transform::getPositiion()
 {

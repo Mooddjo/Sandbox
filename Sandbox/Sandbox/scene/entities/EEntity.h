@@ -14,6 +14,8 @@ namespace sandbox
 	{
 	public:
 		EEntity();
+		EEntity(const mat4x4& modelMatrix);
+		EEntity(const vec3& position);
 		const Transform* getTransform() const;
 		Transform* getTransform();
 		void update(double deltaMs);

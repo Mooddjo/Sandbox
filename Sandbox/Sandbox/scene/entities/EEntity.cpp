@@ -14,6 +14,22 @@ EEntity::EEntity():
 	s_idCounter++;
 }
 
+EEntity::EEntity(const mat4x4& modelMatrix):
+	m_id(s_idCounter),
+	m_transform(this)
+{
+	m_transform.setPosition(vec3(modelMatrix[3].x, modelMatrix[3].y, modelMatrix[3].z));
+	s_idCounter++;
+}
+
+EEntity::EEntity(const vec3& modelMatrix):
+	m_id(s_idCounter),
+	m_transform(this)
+{
+	m_transform.setPosition(modelMatrix);
+	s_idCounter++;
+}
+
 const Transform* 
 EEntity::getTransform() const
 {

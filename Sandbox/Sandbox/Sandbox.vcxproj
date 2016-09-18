@@ -163,6 +163,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClInclude Include="graphics\buffers\GpuBuffers.h" />
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.h" />
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuRawBuffer.h" />
+    <ClInclude Include="graphics\materials\MaterialManager.h" />
     <ClInclude Include="graphics\renderers\RenderData.h" />
     <ClInclude Include="graphics\renderers\api\opengl\AbstractOglRenderer.h" />
     <ClInclude Include="graphics\renderers\api\opengl\BasicRenderer2d.h" />
@@ -198,6 +199,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuIndexBuffer.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuRawBuffer.cpp" />
+    <ClCompile Include="graphics\materials\MaterialManager.cpp" />
     <ClCompile Include="graphics\renderers\RenderData.cpp" />
     <ClCompile Include="graphics\GraphicsService.cpp" />
     <ClCompile Include="graphics\materials\Material.cpp" />

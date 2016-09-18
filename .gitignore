@@ -46,3 +46,15 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.sdf
+Sandbox/x64/Debug/Sandbox/include/SceneService.h
+Sandbox/x64/Debug/Sandbox/include/Shader.h
+Sandbox/x64/Debug/Sandbox/include/Singleton.h
+Sandbox/x64/Debug/Sandbox/include/SmartLogger.h
+Sandbox/x64/Debug/Sandbox/include/StringUtils.h
+Sandbox/x64/Debug/Sandbox/include/Timer.h
+Sandbox/x64/Debug/Sandbox/include/Transform.h
+Sandbox/x64/Debug/Sandbox/include/Vertex.h
+Sandbox/x64/Debug/Sandbox/include/Window.h
+Sandbox/x64/Debug/Sandbox/lib/Sandboxd.exp
+Sandbox/x64/Debug/Sandbox/resources/shaders/basic_shader.fs
+Sandbox/x64/Debug/Sandbox/resources/shaders/basic_shader.vs

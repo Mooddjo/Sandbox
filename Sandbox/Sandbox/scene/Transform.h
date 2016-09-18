@@ -24,6 +24,7 @@ namespace sandbox
 		mat4x4 getLocalMatrix() const;
 		mat4x4 getWorldMatrix() const;
 		void setPosition(vec3 position);
+		void setScale(float scale);
 		vec4 getPositiion();
 		EEntity* getEntity() const;
 

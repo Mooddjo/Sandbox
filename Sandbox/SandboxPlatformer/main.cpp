@@ -9,52 +9,85 @@ using namespace std;
 
 
 
-class MyScript : public FUpdatable
+class RotationScript : public FUpdatable
 {
-	DECLARE_FEATURE(MyScript)
-
+	DECLARE_FEATURE(RotationScript)
 public:
-	MyScript(EEntity* owner) :FUpdatable(owner) {}
-
+	RotationScript(EEntity* owner) :FUpdatable(owner) {}
 	virtual void update(double deltaMs) override
 	{
-		//SMARTLOG("coucou", kInfo);
 		Transform* t = getOwner()->getTransform();
 		t->rotateAboutY(0.005f * deltaMs);
 	}
 
-	virtual void init() override
-	{
-		
-	}
-
-
-
+	virtual void init() override{}
 };
+
 
 class MyApplication : public sandbox::Application
 {
 public:
 	void engineReady()
 	{
+		sceneTwo();
+	}
+
+private:
+
+	float computeStep(float min, float max, int count)
+	{
+		float length = max - min;
+		
+
+		float step = length / (count * 1.0f);
+
+		return step;
+	}
+
+	void sceneTwo()
+	{
+		unsigned int maxEntity = 10;
+		float minX = -1.0;
+		float maxX = 1.0;
+		Scene* s = new Scene();
+
+		float step = computeStep(minX, maxX, maxEntity);
+		for (float i = minX; i < maxX; i += step)
+		{
+			for (float j = maxX; j > minX; j -= step)
+			{
+				EQuad* quad = new EQuad(step, vec3(i + (0.5*step), j - (0.5f*step), 0.0f));
+				FRenderable* f = quad->getFeature<FRenderable2d>();
+				Material* mat = f->getMaterial();
+				
+				float randRed = std::rand() / (RAND_MAX * 1.0f);
+				float randGreen = std::rand() / (RAND_MAX * 1.0f);
+				float randBlue = std::rand() / (RAND_MAX * 1.0f);
+				mat->setProperty("uColor", vec4(randRed, randGreen, randBlue, 1.0f));
+				s->addObject(quad);
+			}
+		}
+
+
+		SceneService::getInstance()->loadScene(s);
+	}
+
+
+	void sceneOne()
+	{
 		unsigned int maxEntity = 1000;
 		Scene* s = new Scene();
-// 		for (int i = 0; i < 1000; ++i)
-// 		{
-// 			EQuad* quad = new EQuad(4.0);
-// 			s->addObject(quad);
-// 		}
-
-		EQuad* quad = new EQuad(4.0);
-		MyScript* scriptFeature = new MyScript(quad);
-		quad->addFeature(scriptFeature);
+		EQuad* quad = new EQuad(4.0f, vec3(-0.5f, 0.0f, 0.0f));
+		RotationScript* scriptFeature = new RotationScript(quad);
+		//quad->addFeature(scriptFeature);
 		s->addObject(quad);
 		FRenderable* f = quad->getFeature<FRenderable2d>();
 		Material* mat = f->getMaterial();
-		quad->getTransform()->setPosition(vec3(0.0f, 0.0f, 0.0f));
+		//quad->getTransform()->setPosition(vec3(0.0f, 0.0f, 0.0f));
 		mat->setProperty("uColor", vec4(0.8f, 0.9f, 0.4f, 1.0f));
 		SceneService::getInstance()->loadScene(s);
 	}
+
 };
 
 

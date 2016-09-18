@@ -4,6 +4,7 @@
 #include <map>
 #include <iostream>
 #include <memory>
+#include "MaterialManager.h"
 #include "Shader.h"
 #include "MaterialProperty.h"
 
@@ -11,21 +12,24 @@ namespace sandbox
 {
 	class DLL_SPEC Material
 	{
+
 	public:
-		Material();
-		~Material();
 		void setShader(ShaderProgram* shaderProgram);
 		void enable() const;
 		void disable() const { m_shader->disable(); }
 		template<typename T> void setProperty(SString name, T value);
 		const MaterialProperty* getProperty(SString name) const;
 		const std::map<SString, MaterialProperty*>& getProperties();
+		Material(SString materialName = "sandbox_diffuse_mat");
+		~Material();
 
 	private:
+
 		MaterialProperty* getProperty(SString name);
 		void setProperty(MaterialProperty* property);
-		std::map<SString, MaterialProperty*> m_properties;
+		
 		SString m_name;
+		std::map<SString, MaterialProperty*> m_properties;
 		std::shared_ptr<ShaderProgram> m_shader;
 	};
 

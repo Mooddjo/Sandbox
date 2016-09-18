@@ -3,7 +3,8 @@
 
 using namespace sandbox;
 
-Material::Material()
+Material::Material(SString materialName):
+	m_name(materialName)
 {
 	Shader* vsShader = Shader::createShader("./resources/shaders/basic_shader.vs", VERTEX_SHADER);
 	Shader* fsShader = Shader::createShader("./resources/shaders/basic_shader.fs", FRAGMENT_SHADER);
