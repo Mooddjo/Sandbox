@@ -6,10 +6,13 @@
 #include <memory>
 #include "MaterialManager.h"
 #include "Shader.h"
-#include "MaterialProperty.h"
+
 
 namespace sandbox
 {
+
+	class MaterialInstance;
+
 	class DLL_SPEC Material
 	{
 
@@ -17,35 +20,38 @@ namespace sandbox
 		void setShader(ShaderProgram* shaderProgram);
 		void enable() const;
 		void disable() const { m_shader->disable(); }
-		template<typename T> void setProperty(SString name, T value);
-		const MaterialProperty* getProperty(SString name) const;
-		const std::map<SString, MaterialProperty*>& getProperties();
+		unsigned int getMaterialId() const { return m_shader->getId(); }
+
+		//template<typename T> void setProperty(SString name, T value);
+		//const MaterialProperty* getProperty(SString name) const;
+		//const std::map<SString, MaterialProperty*>& getProperties();
+		
+		MaterialInstance* createInstance();
 		Material(SString materialName = "sandbox_diffuse_mat");
 		~Material();
 
 	private:
 
-		MaterialProperty* getProperty(SString name);
-		void setProperty(MaterialProperty* property);
+
 		
 		SString m_name;
-		std::map<SString, MaterialProperty*> m_properties;
+//		std::map<SString, MaterialProperty*> m_properties;
 		std::shared_ptr<ShaderProgram> m_shader;
 	};
 
-	template<typename T>
-	void sandbox::Material::setProperty(SString name, T value)
-	{
-		MaterialProperty* matProp = getProperty(name);
-		if (matProp)
-		{
-			matProp->setValue(name, value);
-		}
-		else {
-			MaterialProperty* mat = MaterialProperty::create(name, value);
-			setProperty(mat);
-		}
-	}
+// 	template<typename T>
+// 	void sandbox::Material::setProperty(SString name, T value)
+// 	{
+// 		MaterialProperty* matProp = getProperty(name);
+// 		if (matProp)
+// 		{
+// 			matProp->setValue(name, value);
+// 		}
+// 		else {
+// 			MaterialProperty* mat = MaterialProperty::create(name, value);
+// 			setProperty(mat);
+// 		}
+// 	}
 	
 
 }

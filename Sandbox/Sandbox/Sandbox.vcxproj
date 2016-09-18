@@ -199,6 +199,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuIndexBuffer.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.cpp" />
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuRawBuffer.cpp" />
+    <ClCompile Include="graphics\materials\MaterialInstance.cpp" />
     <ClCompile Include="graphics\materials\MaterialManager.cpp" />
     <ClCompile Include="graphics\renderers\RenderData.cpp" />
     <ClCompile Include="graphics\GraphicsService.cpp" />
@@ -223,6 +224,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="graphics\materials\MaterialInstance.h" />
     <None Include="resources\shaders\basic_shader.fs" />
     <None Include="resources\shaders\basic_shader.vs" />
   </ItemGroup>

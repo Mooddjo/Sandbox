@@ -58,7 +58,7 @@ private:
 			{
 				EQuad* quad = new EQuad(step, vec3(i + (0.5*step), j - (0.5f*step), 0.0f));
 				FRenderable* f = quad->getFeature<FRenderable2d>();
-				Material* mat = f->getMaterial();
+				MaterialInstance* mat = f->getMaterialInstance();
 				
 				float randRed = std::rand() / (RAND_MAX * 1.0f);
 				float randGreen = std::rand() / (RAND_MAX * 1.0f);
@@ -75,17 +75,17 @@ private:
 
 	void sceneOne()
 	{
-		unsigned int maxEntity = 1000;
-		Scene* s = new Scene();
-		EQuad* quad = new EQuad(4.0f, vec3(-0.5f, 0.0f, 0.0f));
-		RotationScript* scriptFeature = new RotationScript(quad);
-		//quad->addFeature(scriptFeature);
-		s->addObject(quad);
-		FRenderable* f = quad->getFeature<FRenderable2d>();
-		Material* mat = f->getMaterial();
-		//quad->getTransform()->setPosition(vec3(0.0f, 0.0f, 0.0f));
-		mat->setProperty("uColor", vec4(0.8f, 0.9f, 0.4f, 1.0f));
-		SceneService::getInstance()->loadScene(s);
+// 		unsigned int maxEntity = 1000;
+// 		Scene* s = new Scene();
+// 		EQuad* quad = new EQuad(4.0f, vec3(-0.5f, 0.0f, 0.0f));
+// 		RotationScript* scriptFeature = new RotationScript(quad);
+// 		//quad->addFeature(scriptFeature);
+// 		s->addObject(quad);
+// 		FRenderable* f = quad->getFeature<FRenderable2d>();
+// 		Material* mat = f->getMaterial();
+// 		//quad->getTransform()->setPosition(vec3(0.0f, 0.0f, 0.0f));
+// 		mat->setProperty("uColor", vec4(0.8f, 0.9f, 0.4f, 1.0f));
+// 		SceneService::getInstance()->loadScene(s);
 	}
 
 };

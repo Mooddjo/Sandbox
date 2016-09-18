@@ -2,6 +2,7 @@
 #include "GraphicsService.h"
 #include "GL/glew.h"
 #include "EEntity.h"
+#include "MaterialInstance.h"
 
 using namespace sandbox;
 
@@ -10,7 +11,7 @@ using namespace sandbox;
 sandbox::RenderData::RenderData(const FRenderable* renderable)
 {
 	auto graphicsService = GraphicsService::getInstance();
-	m_material = renderable->getMaterial();
+	m_materialInstance = renderable->getMaterialInstance();
 	m_modelMatrix = renderable->getOwner()->getTransform();
 
 	m_dataBuffer = graphicsService->provideGpuRawBuffer(
@@ -25,8 +26,8 @@ sandbox::RenderData::RenderData(const FRenderable* renderable)
 
 void sandbox::RenderData::draw() const
 {
-	m_material->enable();
-	m_material->setProperty("u_modelMatrix", m_modelMatrix->getLocalMatrix());
+	m_materialInstance->bind();
+	m_materialInstance->setProperty("u_modelMatrix", m_modelMatrix->getLocalMatrix());
 	m_vertexBuffer->bind();
 	m_indexBuffer->bind();
 
@@ -34,7 +35,7 @@ void sandbox::RenderData::draw() const
 
 	m_vertexBuffer->unbind();
 	m_indexBuffer->unbind();
-	m_material->disable();
+	m_materialInstance->unbind();
 }
 
 

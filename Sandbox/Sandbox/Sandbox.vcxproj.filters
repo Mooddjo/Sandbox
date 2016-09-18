@@ -221,9 +221,13 @@
     <ClCompile Include="graphics\materials\MaterialManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="graphics\materials\MaterialInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\basic_shader.fs" />
     <None Include="resources\shaders\basic_shader.vs" />
+    <None Include="graphics\materials\MaterialInstance.h" />
   </ItemGroup>
 </Project>

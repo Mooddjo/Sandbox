@@ -3,6 +3,8 @@
 #include "EEntity.h"
 #include "MathUtils.h"
 #include "MaterialManager.h"
+#include "MaterialInstance.h"
+#include "Material.h"
 
 using namespace sandbox;
 
@@ -13,8 +15,8 @@ FRenderable::FRenderable(EEntity* owner, Material* material):
 	{
 		MaterialManager* matMgr = MaterialManager::getInstance();
 		Material* mat = matMgr->createMaterial("sandbox_diffuse_mat");
-
-		m_material = std::shared_ptr<Material>(mat);
+		MaterialInstance* matInstance = mat->createInstance();
+		m_materialInstance = std::shared_ptr<MaterialInstance>(matInstance);
 	}
 	else
 	{
@@ -28,28 +30,28 @@ const Mesh* sandbox::FRenderable::getMesh() const
 	return m_mesh.get();
 }
 
-Material* sandbox::FRenderable::getMaterial() const
+MaterialInstance* sandbox::FRenderable::getMaterialInstance() const
 {
-	return m_material.get();
+	return m_materialInstance.get();
 }
 
 void sandbox::FRenderable::setMaterial(Material* material)
 {
-	if (material)
-	{
-		m_material = std::shared_ptr<Material>(material);
-		updateMaterial();
-	}
+// 	if (material)
+// 	{
+// 		m_material = std::shared_ptr<Material>(material);
+// 		updateMaterial();
+// 	}
 }
 
 void sandbox::FRenderable::updateMaterial()
 {
-	if (m_material)
-	{
-		if (m_mesh)
-		{
-			
-		}
-	}
+// 	if (m_material)
+// 	{
+// 		if (m_mesh)
+// 		{
+// 			
+// 		}
+// 	}
 }
 

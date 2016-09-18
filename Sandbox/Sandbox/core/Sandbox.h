@@ -11,5 +11,6 @@
 #include "EQuad.h"
 #include "FRenderable2d.h"
 
+#include "MaterialInstance.h"
 #include "Material.h"
 #include "MaterialProperty.h"

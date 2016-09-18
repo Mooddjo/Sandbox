@@ -16,7 +16,7 @@ namespace sandbox
 		GpuRawBuffer* m_dataBuffer;
 		GpuVertexBuffer* m_vertexBuffer;
 		GpuIndexBuffer* m_indexBuffer;
-		Material* m_material;
+		MaterialInstance* m_materialInstance;
 		const Transform* m_modelMatrix;
 	};
 }
