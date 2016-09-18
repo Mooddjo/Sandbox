@@ -58,3 +58,5 @@ Sandbox/x64/Debug/Sandbox/include/Window.h
 Sandbox/x64/Debug/Sandbox/lib/Sandboxd.exp
 Sandbox/x64/Debug/Sandbox/resources/shaders/basic_shader.fs
 Sandbox/x64/Debug/Sandbox/resources/shaders/basic_shader.vs
+Sandbox/x64/Debug/
+Sandbox/Sandbox.VC.opendb
