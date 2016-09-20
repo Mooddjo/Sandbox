@@ -1,10 +1,11 @@
 #pragma once
 
 #include "AbstractOglRenderer.h"
+#include "Platform.h"
 
 namespace sandbox
 {
-	class BasicRenderer2d : public AbstractOglRenderer
+	class DLL_SPEC BasicRenderer2d : public AbstractOglRenderer
 	{
 	public:
 		virtual void process() override;

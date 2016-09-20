@@ -34,6 +34,6 @@ void sandbox::AbstractRenderer::renderableCreatedEvent(IEventData* data)
 	if (renderableFeature)
 	{
 		renderable2dCreated(renderableFeature);
-		SMARTLOG("Rendering feature created", kInfo);
+		//SMARTLOG("Rendering feature created", kInfo);
 	}
 }

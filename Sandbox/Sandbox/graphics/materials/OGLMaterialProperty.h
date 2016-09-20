@@ -3,6 +3,7 @@
 #include "SmartLogger.h"
 #include "MathUtils.h"
 #include "gtc/type_ptr.hpp"
+#include "gl/glew.h"
 
 namespace sandbox
 {
