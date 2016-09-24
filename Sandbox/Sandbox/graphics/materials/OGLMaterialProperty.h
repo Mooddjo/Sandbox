@@ -3,6 +3,7 @@
 #include "SmartLogger.h"
 #include "MathUtils.h"
 #include "gtc/type_ptr.hpp"
+#include "OGLUtils.h"
 #include "gl/glew.h"
 
 namespace sandbox
@@ -17,7 +18,7 @@ namespace sandbox
 	void sandbox::MaterialProperty::Value<vec4>::submit(unsigned int materialId)
 	{
 		unsigned int location = glGetUniformLocation(materialId, m_name.getCString());
-		glUniform4f(location, data.r, data.g, data.b, data.a);
+		GL_CHECK(glUniform4f(location, data.r, data.g, data.b, data.a));
 	}
 
 	template<>

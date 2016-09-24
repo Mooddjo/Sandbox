@@ -11,7 +11,7 @@
 #endif
 
 #if BASIC_2D_RENDERER
-#include "BasicRenderer2d.h"
+#include "OGLBasic2DRenderer.h"
 #endif
 
 using namespace sandbox;
@@ -19,7 +19,7 @@ using namespace sandbox;
 sandbox::GraphicsService::GraphicsService()
 {
 #if OPENGL
-	m_renderer2d = new BasicRenderer2d();
+	m_renderer2d = new OGLBasic2DRenderer();
 	m_renderer2d->init();
 #endif
 }
@@ -68,7 +68,7 @@ AbstractRenderer* sandbox::GraphicsService::getRenderer2d()
 	else
 	{
 #if BASIC_2D_RENDERER
-		m_renderer2d = new BasicRenderer2d();
+		m_renderer2d = new OGLBasic2DRenderer();
 #endif
 	}
 

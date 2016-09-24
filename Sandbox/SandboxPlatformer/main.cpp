@@ -46,7 +46,7 @@ private:
 
 	void sceneTwo()
 	{
-		unsigned int maxEntity = 100;
+		unsigned int maxEntity = 10;
 		float minX = -1.0;
 		float maxX = 1.0;
 		Scene* s = new Scene();

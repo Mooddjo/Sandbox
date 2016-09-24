@@ -1,24 +1,28 @@
-#include "AbstractOglRenderer.h"
+#include "OGLAbstract2DRenderer.h"
 #include "SmartLogger.h"
 #include "gl/glew.h"
+#include "OGLUtils.h"
+
 
 using namespace sandbox;
 
-bool sandbox::AbstractOglRenderer::init()
+
+
+bool sandbox::OGLAbstract2DRenderer::init()
 {
+	Abstract2DRenderer::init();
 	m_clearColor.r = 0.2f;
 	m_clearColor.g = 0.2f;
 	m_clearColor.b = 0.2f;
 	m_clearColor.a = 1.0f;
 
 	SMARTLOG("-----SmartRay Initialization-----", kInfo);
+
 	glewExperimental = GL_TRUE;
-	GLenum err = glewInit();
-	if (err != GLEW_OK)
-	{
-		SMARTLOG((char*)glewGetErrorString(err), kError);
-		return false;
-	}
+	glewInit();
+	GLenum err = glGetError();// HACK to avoid INVALID_ENUM after glewinit
+
+
 
 	SString glewVersion = "Glew version: ";
 	glewVersion.append((char*)glewGetString(GLEW_VERSION));
@@ -36,7 +40,7 @@ bool sandbox::AbstractOglRenderer::init()
 	return true;
 }
 
-void sandbox::AbstractOglRenderer::clearFrame()
+void sandbox::OGLAbstract2DRenderer::clearFrame()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }

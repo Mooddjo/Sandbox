@@ -111,13 +111,7 @@
     <ClInclude Include="graphics\GraphicsService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\renderers\api\opengl\BasicRenderer2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="graphics\renderers\AbstractRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics\renderers\api\opengl\AbstractOglRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.h">
@@ -127,6 +121,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="graphics\materials\MaterialManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\renderers\api\opengl\OGLUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\renderers\Abstract2DRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\renderers\Abstract3DRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\renderers\api\opengl\OGLAbstract2DRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\renderers\api\opengl\OGLBasic2DRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -203,13 +212,7 @@
     <ClCompile Include="graphics\GraphicsService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\renderers\api\opengl\BasicRenderer2d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="graphics\renderers\AbstractRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\renderers\api\opengl\AbstractOglRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="graphics\buffers\api\opengl\OglGpuVertexBuffer.cpp">
@@ -222,6 +225,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="graphics\materials\MaterialInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\renderers\api\opengl\OGLUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\renderers\Abstract2DRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\renderers\api\opengl\OGLAbstract2DRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\renderers\api\opengl\OGLBasic2DRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
