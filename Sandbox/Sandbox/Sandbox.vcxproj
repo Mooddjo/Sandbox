@@ -166,6 +166,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClInclude Include="graphics\materials\MaterialManager.h" />
     <ClInclude Include="graphics\renderers\Abstract2DRenderer.h" />
     <ClInclude Include="graphics\renderers\Abstract3DRenderer.h" />
+    <ClInclude Include="graphics\renderers\api\opengl\OGLBatch2DRenderer.h" />
     <ClInclude Include="graphics\renderers\api\opengl\OGLUtils.h" />
     <ClInclude Include="graphics\renderers\RenderData.h" />
     <ClInclude Include="graphics\renderers\api\opengl\OGLAbstract2DRenderer.h" />
@@ -205,6 +206,7 @@ xcopy "$(ProjectDir)resources" "$(SolutionDir)$(Platform)\$(Configuration)\$(Pro
     <ClCompile Include="graphics\materials\MaterialInstance.cpp" />
     <ClCompile Include="graphics\materials\MaterialManager.cpp" />
     <ClCompile Include="graphics\renderers\Abstract2DRenderer.cpp" />
+    <ClCompile Include="graphics\renderers\api\opengl\OGLBatch2DRenderer.cpp" />
     <ClCompile Include="graphics\renderers\api\opengl\OGLUtils.cpp" />
     <ClCompile Include="graphics\renderers\RenderData.cpp" />
     <ClCompile Include="graphics\GraphicsService.cpp" />
