@@ -3,6 +3,7 @@
 #include "Vertex.h"
 #include <vector>
 #include <deque>
+#include "GpuBuffers.h"
 
 namespace sandbox
 {
@@ -24,6 +25,8 @@ namespace sandbox
 		void clearIndices();
 		void clearVertices();
 		void clear();
+
+		static GpuRawBuffer* buildGpuRawBufferWithMesh(Mesh* mesh);
 	private:
 		std::vector<Vertex> m_vertices;
 		std::vector<unsigned short> m_indices;

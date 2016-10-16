@@ -1,8 +1,7 @@
 #include "GraphicsService.h"
 
-
 #define OPENGL 1
-#define BASIC_2D_RENDERER 1
+#define BATCH_2D_RENDERER 0
 
 #if OPENGL
 #include "OglGpuIndexBuffer.h"
@@ -10,7 +9,9 @@
 #include "OglGpuRawBuffer.h"
 #endif
 
-#if BASIC_2D_RENDERER
+#if BATCH_2D_RENDERER
+#include "OGLBatch2DRenderer.h"
+#else
 #include "OGLBasic2DRenderer.h"
 #endif
 
@@ -67,7 +68,9 @@ AbstractRenderer* sandbox::GraphicsService::getRenderer2d()
 	}
 	else
 	{
-#if BASIC_2D_RENDERER
+#if BATCH_2D_RENDERER
+		m_renderer2d = new OGLBatch2DRenderer();
+#else
 		m_renderer2d = new OGLBasic2DRenderer();
 #endif
 	}
@@ -80,4 +83,15 @@ AbstractRenderer* sandbox::GraphicsService::getRenderer3d()
 {
 	std::logic_error("Not implemented yet");
 	return nullptr;
+}
+
+GpuRawBuffer*
+GraphicsService::buildGpuRawBufferFromMesh(const Mesh* mesh)
+{
+	GpuRawBuffer* gpuRawBuffer = this->provideGpuRawBuffer(
+		mesh->getVerticesCount(),
+		mesh->getVertexSize(),
+		mesh->getVerticesPointer());
+
+	return gpuRawBuffer;
 }

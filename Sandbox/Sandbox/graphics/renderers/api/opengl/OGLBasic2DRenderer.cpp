@@ -9,7 +9,6 @@ using namespace std;
 
 void sandbox::OGLBasic2DRenderer::process()
 {
-	OGLAbstract2DRenderer::init();
 	clearFrame();
 	//beginRendering();
 	for (auto renderData : m_renderData)

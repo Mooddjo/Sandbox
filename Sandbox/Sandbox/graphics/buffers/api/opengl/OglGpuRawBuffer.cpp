@@ -23,3 +23,13 @@ OglGpuRawBuffer::unbind() const
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
+
+void
+OglGpuRawBuffer::addData(GpuRawBuffer& dataBuffer)
+{
+	void* headData = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	memcpy(headData, dataBuffer.getData(), dataBuffer.getSize());
+	glUnmapBuffer(GL_ARRAY_BUFFER);
+
+}
+

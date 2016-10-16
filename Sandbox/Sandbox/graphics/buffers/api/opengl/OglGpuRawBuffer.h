@@ -10,8 +10,8 @@ namespace sandbox
 		OglGpuRawBuffer(unsigned int size, unsigned int elemenSize, const void* data);
 		virtual void bind() const override;
 		virtual void unbind() const override;
+		virtual void addData(GpuRawBuffer& dataBuffer) override;
 
-	private:
 	};
 
 }

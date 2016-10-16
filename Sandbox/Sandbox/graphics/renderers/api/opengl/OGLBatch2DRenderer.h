@@ -4,13 +4,16 @@
 #include "GpuBuffers.h"
 #include <memory>
 #include "Vertex.h"
+#include <climits>
+
+
 
 namespace sandbox
 {
 	class OGLBatch2DRenderer: public OGLAbstract2DRenderer
 	{
-		const unsigned int batch_max_size = 65536;
-		const unsigned int batch_element_size = sizeof(Vertex);
+		const unsigned int batch_max_size = std::numeric_limits<unsigned short>::max();
+		const unsigned int batch_max_element_size = sizeof(Vertex);
 
 
 	public:

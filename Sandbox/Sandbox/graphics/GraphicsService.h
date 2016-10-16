@@ -3,6 +3,7 @@
 #include "Singleton.h"
 #include "GpuBuffers.h"
 #include "AbstractRenderer.h"
+#include "Mesh.h"
 
 namespace sandbox
 {
@@ -18,7 +19,7 @@ namespace sandbox
 		void render();
 		AbstractRenderer* getRenderer2d();
 		AbstractRenderer* getRenderer3d();
-
+		GpuRawBuffer* buildGpuRawBufferFromMesh(const Mesh* mesh);
 	private:
 		AbstractRenderer* m_renderer2d;
 	};

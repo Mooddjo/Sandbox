@@ -1,4 +1,5 @@
 #include "Mesh.h"
+#include "GraphicsService.h"
 
 
 using namespace sandbox;
@@ -83,6 +84,8 @@ void sandbox::Mesh::clear()
 	clearIndices();
 	clearVertices();
 }
+
+
 
 unsigned short
 Mesh::getVertexSize() const
