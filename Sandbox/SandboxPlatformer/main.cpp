@@ -46,7 +46,7 @@ private:
 
 	void sceneTwo()
 	{
-		unsigned int maxEntity = 10;
+		unsigned int maxEntity = 20;
 		float minX = -1.0;
 		float maxX = 1.0;
 		Scene* s = new Scene();
@@ -95,7 +95,7 @@ int
 main(int argc, char* argv[])
 {
 	MyApplication a;
-	Window win(100,100,1280,720, "Sandbox Platformer");
+	Window win(100,100,800,600, "Sandbox Platformer");
 	a.setApplicationWindow(&win);
 	a.run();
 	return EXIT_SUCCESS;

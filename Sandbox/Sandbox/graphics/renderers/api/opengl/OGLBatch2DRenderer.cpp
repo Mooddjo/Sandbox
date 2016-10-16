@@ -3,7 +3,8 @@
 
 using namespace sandbox;
 
-bool sandbox::OGLBatch2DRenderer::init()
+bool
+OGLBatch2DRenderer::init()
 {
 	OGLAbstract2DRenderer::init();
 	GpuRawBuffer* buffer = GraphicsService::getInstance()->provideGpuRawBuffer(
@@ -16,14 +17,16 @@ bool sandbox::OGLBatch2DRenderer::init()
 	return true;
 }
 
-void sandbox::OGLBatch2DRenderer::process()
+void
+OGLBatch2DRenderer::process()
 {
 	throw std::logic_error("The method or operation is not implemented.");
 	
 }
 
 
-void sandbox::OGLBatch2DRenderer::renderableCreatedEvent(IEventData* renderable)
+void
+OGLBatch2DRenderer::renderableCreatedEvent(IEventData* renderable)
 {
 	FRenderable* featRenderable = static_cast<EvFeatureCreated<FRenderable>*>(renderable)->getFeature();
 	GpuRawBuffer* rawBuffer = GraphicsService::getInstance()->buildGpuRawBufferFromMesh(featRenderable->getMesh());
