@@ -24,6 +24,7 @@ namespace sandbox
 		virtual void renderableCreatedEvent(IEventData* renderable) override;
 
 	private:
-		std::shared_ptr<GpuRawBuffer> m_buffer;
+		std::shared_ptr<GpuRawBuffer> m_rawbuffer;
+		std::shared_ptr<GpuIndexBuffer> m_indexBuffer;
 	};
 }

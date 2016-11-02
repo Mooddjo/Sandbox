@@ -12,7 +12,9 @@ OGLBatch2DRenderer::init()
 		batch_max_element_size, 
 		nullptr);
 
-	m_buffer = std::shared_ptr<GpuRawBuffer>(buffer);
+
+	m_rawbuffer = std::shared_ptr<GpuRawBuffer>(buffer);
+	m_indexBuffer = std::make_shared<GpuIndexBuffer>(batch_max_size,;
 
 	return true;
 }
@@ -31,7 +33,7 @@ OGLBatch2DRenderer::renderableCreatedEvent(IEventData* renderable)
 	FRenderable* featRenderable = static_cast<EvFeatureCreated<FRenderable>*>(renderable)->getFeature();
 	GpuRawBuffer* rawBuffer = GraphicsService::getInstance()->buildGpuRawBufferFromMesh(featRenderable->getMesh());
 	
-	m_buffer->addData(*rawBuffer);
+	m_rawbuffer->addData(*rawBuffer);
 
 	//TODO update ibo and vao;
 
