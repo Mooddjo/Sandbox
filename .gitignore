@@ -62,3 +62,5 @@ Sandbox/x64/Debug/
 Sandbox/Sandbox.VC.opendb
 Sandbox/x64/
 Sandbox/Sandbox.VC.db
+build
+*.suo
